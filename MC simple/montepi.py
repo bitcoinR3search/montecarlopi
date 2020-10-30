@@ -36,7 +36,7 @@ valor de pi mas exacto y el tiempo que demora en realizar la simulación
 	t2=time()
 	tiempo=t2-t1
 	err= pi_est-np.pi
-	return n,err, tiempo
+	return pi_est,err, tiempo
 
 def stats(n=10000,m=10):
 	""" 
