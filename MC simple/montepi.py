@@ -60,6 +60,7 @@ def stats(n=10000,m=10):
 statsv=np.vectorize(stats)
 
 if __name__ == "__main__":
+	a='23'+'321'
 	NN=np.logspace(2,6,25,dtype=np.int64)
 	A=[]
 	for i in range(20):
