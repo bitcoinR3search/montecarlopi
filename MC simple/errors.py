@@ -8,8 +8,8 @@ Created on Tue Nov 10 20:10:09 2020
 import numpy as np
 import matplotlib.pyplot as plt
 
-def errors(k=10000,l=100):
-    n=np.linspace(100,k,l) #varios datos que van creciendo
+def errors(k=10000,l=100): #k es el numero maximo de tiradas y l es la cantidad de datos a graficar
+    n=np.linspace(100,k,l) #varios datos que van creciendo linealmente
     error=[]
     disc=[]
     piv=[]
