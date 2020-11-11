@@ -8,8 +8,8 @@ Created on Tue Nov 10 20:10:09 2020
 import numpy as np
 import matplotlib.pyplot as plt
 
-def errors(k=5,l=100):
-    n=np.logspace(2,k,l) #varios datos que van creciendo
+def errors(k=5,l=100): #k es el exponente de 10, l es la cantidad de datos a graficar
+    n=np.logspace(2,k,l) #varios datos que van creciendo logaritmicamente
     error=[]
     disc=[]
     piv=[]
@@ -31,4 +31,3 @@ def errors(k=5,l=100):
     plt.xlabel('n')
     plt.ylabel('discrepancia')
     plt.show()
-errors(5,100)
