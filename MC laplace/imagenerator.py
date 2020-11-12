@@ -7,9 +7,10 @@ import os
 
 def nombres(txt):
 	if txt[0]=='N':
-		N=float(txt[1:6])
-		if txt[7]=='k':
-			k=int(txt[8:11])			
+		N=float(txt[1:10])
+		
+		if txt[11]=='k':
+			k=int(txt[12:15])			
 	else:
 		N=0
 		k=0
@@ -111,5 +112,5 @@ def errores(N,k):
 
 
 if __name__=='__main__':
-
-	print('hola')
+	nombres('N1.000e+02_k200')
+	

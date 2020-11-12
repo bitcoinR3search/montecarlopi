@@ -38,7 +38,7 @@ def results(N,k,l=0.75,a=1.5,b=1.0):
 	pi_lb = [a2_mean,a2_std,a2_pi]
 
 	#el nombre del binario expresa el N y k usado
-	np.savez('binaries/N%0.e_k%d'%(N,k),pi_l,pi_lb)
+	np.savez('binaries/N%.3e_k%d'%(N,k),pi_l,pi_lb)
 	#con este binario se procede al 'graficamiento' 
 
 

@@ -20,7 +20,7 @@ N_cc=N[1:20:2];
 for i in N_jp:
 	statsBuff.results(i,k)
 
-'''
+
 #generador de las imagenes para cada binario
 contenido = os.listdir('binaries/')
 for txt in contenido:
@@ -30,9 +30,8 @@ for txt in contenido:
 
 #grafica errores
 
-imagenerator.errores(N,k)
+imagenerator.errores(N_jp,k)
 
-'''
 
 
 
