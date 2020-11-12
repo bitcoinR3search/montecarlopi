@@ -78,7 +78,7 @@ def errores(N,k):
 	print(_N)
 	contenido = os.listdir('binaries/')
 
-	plt.figure(2)
+	plt.figure(2,figsize=(15,10))
 
 	pi_l_e=[]
 	pi_lb_e=[]
