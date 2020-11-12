@@ -97,10 +97,11 @@ def errores(N,k):
 	
 	plt.subplot(2,2,2)
 	
-	k = 1/(pi_l[1]*np.sqrt(2*np.pi))
-	x_=np.linspace(min(pi_l[2]),max(pi_l[2]),100)
+	k = 1/(np.std(pi_l_e)*np.sqrt(2*np.pi))
+	x_=np.linspace(min(pi_l_e),max(pi_l_e),100)
 
-	Norm= k*np.exp((-1/2)*((x_-pi_l[0])/pi_l[1])**2)
+	Norm= k*np.exp((-1/2)*((x_-np.mean(pi_l_e))/np.std(pi_l_e)**2))
+	
 	plt.plot(x_,Norm)
 	plt.title('Pi Estimado por \nMétodo de Laplace',fontsize=11)
 	plt.xlabel('Pi estimado', fontsize=11)
