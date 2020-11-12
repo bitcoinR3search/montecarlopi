@@ -44,4 +44,5 @@ def results(N,k,l=0.75,a=1.5,b=1.0):
 
 
 if __name__=='__main__':
-	results(10**2,500)
+	#results(10**2,500)	
+	print('hola')
