@@ -34,7 +34,8 @@ def dibujar(txt):
 # posicion 2 vector de valores k veces estimado
 
 #Para laplace
-	plt.figure(1) 
+	plt.figure(1,figsize=(15,10)) 
+	plt.subplot(1,2,1)
 	yhist, xhist, patches = plt.hist(pi_l[2], 50, density=1, facecolor='b', alpha=0.75, rwidth = 0.9)
 	k = 1/(pi_l[1]*np.sqrt(2*np.pi))
 	Norm= k*np.exp((-1/2)*((xhist-pi_l[0])/pi_l[1])**2)
@@ -43,11 +44,9 @@ def dibujar(txt):
 	plt.xlabel('valor medio Pi simulado', fontsize=14)
 	plt.ylabel('Frecuencia Pi simulado ', fontsize=14)
 	plt.grid()
-	plt.savefig("images/histograms/pi_l_N%.0ek%d.jpg"%(N_,k_),bbox_inches='tight')
-	plt.close(1)
-
-	plt.figure(2) 
+	
 #Para laplace Buffon
+	plt.subplot(1,2,2)
 	yhist1, xhist1, patches1 = plt.hist(pi_lb[2], 50, density=1, facecolor='b', alpha=0.75, rwidth = 0.9)
 
 	k = 1/(pi_lb[1]*np.sqrt(2*np.pi))
@@ -58,8 +57,9 @@ def dibujar(txt):
 	plt.xlabel('valor medio Pi simulado', fontsize=14)
 	plt.ylabel('Frecuencia Pi simulado ', fontsize=14)
 	plt.grid()
-	plt.savefig("images/histograms/pi_lb_N%.0ek%d.jpg"%(N_,k_),bbox_inches='tight')
-	plt.close(2)
+	plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
+	plt.savefig("images/histograms/pi_N%.0ek%d.jpg"%(N_,k_),bbox_inches='tight')
+	plt.close(1)
 
 
 def errores(N,k):
@@ -70,7 +70,7 @@ def errores(N,k):
 
 	print(_N)
 	contenido = os.listdir('binaries/')
-	plt.figure(3)
+	plt.figure(2)
 
 	pi_l_e=[]
 	pi_lb_e=[]
@@ -87,7 +87,7 @@ def errores(N,k):
 
 #Laplace
 
-	plt.subplot(2,2,1)
+	plt.subplot(1,2,1)
 	print(_N)
 	plt.plot(_N,pi_l_e,'-*')
 	plt.title('Error:  Pi_real-Pi_estimado \nMétodo de Laplace',fontsize=11)
@@ -95,44 +95,19 @@ def errores(N,k):
 	plt.ylabel('Frecuencia Pi', fontsize=11)	
 	plt.grid()
 	
-	plt.subplot(2,2,2)
-	
-	k = 1/(np.std(pi_l_e)*np.sqrt(2*np.pi))
-	x_=np.linspace(min(pi_l_e),max(pi_l_e),100)
-
-	Norm= k*np.exp((-1/2)*((x_-np.mean(pi_l_e))/np.std(pi_l_e)**2))
-	
-	plt.plot(x_,Norm)
-	plt.title('Pi Estimado por \nMétodo de Laplace',fontsize=11)
-	plt.xlabel('Pi estimado', fontsize=11)
-	plt.ylabel('Frecuencia Pi ', fontsize=11)	
-	plt.grid()
-	
 
 #laplace Buffon
 
-	plt.subplot(2,2,3)
+	plt.subplot(1,2,2)
 	plt.plot(_N,pi_lb_e,'-*')
 	plt.title('Error:  Pi_real-Pi_estimado \nMétodo de Laplace Buffon',fontsize=11)
 	plt.xlabel('N agujas lanzadas', fontsize=11)
 	plt.ylabel('Frecuencia Pi simulado ', fontsize=11)	
 	plt.grid()
 	
-	plt.subplot(2,2,4)
-	
-	k = 1/(pi_lb[1]*np.sqrt(2*np.pi))
-	x1_=np.linspace(min(pi_lb[2]),max(pi_lb[2]),100)
-
-	Norm= k*np.exp((-1/2)*((x1_-pi_lb[0])/pi_lb[1])**2)
-	plt.plot(x1_,Norm)
-	plt.title('Pi Estimado por Método \nde Laplace Buffon',fontsize=11)
-	plt.xlabel('Pi estimado', fontsize=11)
-	plt.ylabel('Frecuencia Pi ', fontsize=11)	
-	plt.grid()
 	plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
 	plt.savefig("images/Errores.jpg", bbox_inches='tight')	
-	
-
+	plt.close(2)
 
 
 if __name__=='__main__':
