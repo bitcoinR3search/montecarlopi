@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 n=np.logspace(2,5,500) #varios datos que van creciendo logaritmicamente
 error, disc, piv =[], [], []
 for i in (n):
-    j= np.abs(np.random.normal(0.27,0.5,(int(i), 2)))
+    j= np.abs(np.random.normal(0.27,0.5,(int(i), 2))) #distribucion normal con 0.27 media y 0.5 varianza
     z= np.sqrt(j[:,0]*j[:,0]+j[:,1]*j[:,1])
     condi1=z<1
     bb=condi1.sum()
@@ -22,7 +22,7 @@ for i in (n):
     piv.append(pi)
 error1, disc1, piv1 =[], [], []
 for i in (n):
-    j= np.abs(np.random.random((int(i), 2)))
+    j= np.abs(np.random.random((int(i), 2))) #distribucion uniforme entre 0 y 1
     z= np.sqrt(j[:,0]*j[:,0]+j[:,1]*j[:,1])
     condi1=z<1
     bb=condi1.sum()
@@ -32,7 +32,7 @@ for i in (n):
     piv1.append(pi)
 error2, disc2, piv2 =[], [], []
 for i in (n):
-    j= np.abs(np.random.exponential(0.42, (int(i), 2)))
+    j= np.abs(np.random.exponential(0.42, (int(i), 2))) #distribucion exponencial con parametro 0.42
     z= np.sqrt(j[:,0]*j[:,0]+j[:,1]*j[:,1])
     condi1=z<1
     bb=condi1.sum()
@@ -40,7 +40,7 @@ for i in (n):
     error2.append(100*(pi-np.pi)/np.pi) #error porcentual respecto al valor de referencia
     disc2.append(pi-np.pi) #discrepancia respecto al valor de referencia
     piv2.append(pi)
-
+#los parametros que escogi para las distribuciones fueron abase de prueba y errror
 plt.plot(n,disc,'g')
 plt.plot(n,disc1,'r')
 plt.plot(n,disc2,'b')
