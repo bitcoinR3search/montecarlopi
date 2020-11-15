@@ -11,6 +11,7 @@ monte carlo para aproximar el valor de Pi por dos métodos:
   - Mostrar la convergencia al valor de pi, el cual es fuertemente dependiente a cuanto mayor sea el número de lanzamientos en la simulación.
   - Estudiar los métodos de generación de números pseudo aleatorios, y demostrar la convergencia del valor pi simulado al cambiar parámetros como el seed (semilla de generación de números aleatorios), o las distribuciones probabilisticas en la generación aleatorea en los lanzamientos. 
 
+![alt text](https://github.com/CobraPython/montecarlopi/blob/main/MC%20simple/images/errors_uniforme.png)
 
 ## MC SIMPLE
 La carpeta MC SIMPLE contiene archivos que hacen el análisis simple y de relación de áreas.
