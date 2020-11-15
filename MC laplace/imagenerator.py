@@ -64,7 +64,7 @@ def dibujar(txt):
 	plt.xlabel('valor medio Pi simulado', fontsize=14)
 	plt.ylabel('Frecuencia Pi simulado ', fontsize=14)
 	plt.grid()
-	plt.savefig("images/histograms/pi_lb_N%.0ek%d.jpg"%(N_,k_),bbox_inches='tight')
+	plt.savefig("images/histograms/pi_N%.3ek%d.jpg"%(N_,k_),bbox_inches='tight')
 	plt.close(1)
 
 
@@ -75,7 +75,7 @@ def errores(N,k):
 	_N=N
 	_k=k
 
-	print(_N)
+
 	contenido = os.listdir('binaries/')
 
 	plt.figure(2,figsize=(15,10))
@@ -97,7 +97,7 @@ def errores(N,k):
 	
 	plt.subplot(1,2,1)
 
-	print(_N)
+
 	plt.plot(_N,pi_l_e,'-*')
 	plt.title('Error:  Pi_real-Pi_estimado \nMétodo de Laplace',fontsize=11)
 	plt.xlabel('N agujas lanzadas', fontsize=11)
