@@ -9,10 +9,10 @@ Created on Fri Nov 13 12:27:04 2020
 import numpy as np
 import matplotlib.pyplot as plt
  #k es el exponente de 10, l es la cantidad de datos a graficar
-n=np.logspace(2,5,500) #varios datos que van creciendo logaritmicamente
+n=np.logspace(6,2,200) #varios datos que van creciendo logaritmicamente
 error, disc, piv =[], [], []
 for i in (n):
-    j= np.abs(np.random.normal(0.27,0.5,(int(i), 2))) #distribucion normal con 0.27 media y 0.5 varianza
+    j= np.abs(np.random.normal(0.5,0.25,(int(i), 2))) #distribucion normal con 0.27 media y 0.5 varianza
     z= np.sqrt(j[:,0]*j[:,0]+j[:,1]*j[:,1])
     condi1=z<1
     bb=condi1.sum()
@@ -41,9 +41,10 @@ for i in (n):
     disc2.append(pi-np.pi) #discrepancia respecto al valor de referencia
     piv2.append(pi)
 #los parametros que escogi para las distribuciones fueron abase de prueba y errror
-plt.plot(n,disc,'g')
-plt.plot(n,disc1,'r')
-plt.plot(n,disc2,'b')
+plt.semilogx(n,disc,'g')
+plt.semilogx(n,disc1,'r')
+plt.semilogx(n,disc2,'b')
 plt.ylabel('discrepancia')
 plt.xlabel('azul=exp, rojo=unif, verde=norm')
+plt.grid()
 plt.show()
