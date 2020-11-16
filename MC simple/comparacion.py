@@ -10,7 +10,11 @@ import numpy as np
 import matplotlib.pyplot as plt
  #k es el exponente de 10, l es la cantidad de datos a graficar
 n=np.logspace(6,2,200) #varios datos que van creciendo logaritmicamente
+
+
 error, disc, piv =[], [], []
+
+
 for i in (n):
     j= np.abs(np.random.normal(0.5,0.25,(int(i), 2))) #distribucion normal con 0.27 media y 0.5 varianza
     z= np.sqrt(j[:,0]*j[:,0]+j[:,1]*j[:,1])
@@ -21,6 +25,8 @@ for i in (n):
     disc.append(pi-np.pi) #discrepancia respecto al valor de referencia
     piv.append(pi)
 error1, disc1, piv1 =[], [], []
+
+
 for i in (n):
     j= np.abs(np.random.random((int(i), 2))) #distribucion uniforme entre 0 y 1
     z= np.sqrt(j[:,0]*j[:,0]+j[:,1]*j[:,1])
@@ -31,6 +37,8 @@ for i in (n):
     disc1.append(pi-np.pi) #discrepancia respecto al valor de referencia
     piv1.append(pi)
 error2, disc2, piv2 =[], [], []
+
+
 for i in (n):
     j= np.abs(np.random.exponential(0.42, (int(i), 2))) #distribucion exponencial con parametro 0.42
     z= np.sqrt(j[:,0]*j[:,0]+j[:,1]*j[:,1])
@@ -41,6 +49,7 @@ for i in (n):
     disc2.append(pi-np.pi) #discrepancia respecto al valor de referencia
     piv2.append(pi)
 #los parametros que escogi para las distribuciones fueron abase de prueba y errror
+
 plt.semilogx(n,disc,'g')
 plt.semilogx(n,disc1,'r')
 plt.semilogx(n,disc2,'b')
