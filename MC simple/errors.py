@@ -44,8 +44,8 @@ def errors_data(k=10000,l=300): #k es el numero maximo de tiradas y l es la cant
     for i,j in zip(n,n1):
         pi,_= stats(i,20)
         pi1,_=stats(j,20)
-        error.append(np.pi-pi) #error porcentual respecto al valor de referencia
-        error1.append(np.pi-pi1) #error porcentual respecto al valor de referencia
+        error.append(100*(np.pi-pi)/np.pi) #error respecto al valor de referencia
+        error1.append(100*(np.pi-pi1)/np.pi) #error respecto al valor de referencia
     return error,error1
 
 if __name__=='__main__':
