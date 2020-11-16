@@ -50,10 +50,11 @@ for i in (n):
     piv2.append(pi)
 #los parametros que escogi para las distribuciones fueron abase de prueba y errror
 
-plt.semilogx(n,disc,'g')
-plt.semilogx(n,disc1,'r')
-plt.semilogx(n,disc2,'b')
+plt.semilogx(n,disc,'g', label='normal')
+plt.semilogx(n,disc1,'r', label='uniforme')
+plt.semilogx(n,disc2,'b', label='exponencial')
 plt.ylabel('discrepancia')
-plt.xlabel('azul=exp, rojo=unif, verde=norm')
+plt.xlabel('Numero de tiradas')
 plt.grid()
+plt.legend()
 plt.show()
