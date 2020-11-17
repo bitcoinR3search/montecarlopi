@@ -80,25 +80,26 @@ def errores(N,k):
 
 	plt.figure(2,figsize=(15,10))
 
-	pi_l_e=[]
-	pi_lb_e=[]
+	pi_l_e,	pi_lb_e, nn=[],[],[]
+	
 	
 
-
 	for txt in contenido:
+		N,_=nombres(txt)
+		nn.append(N)
 		path='binaries/'+txt
 		data = np.load(path,allow_pickle=True)
 		pi_l = data['arr_0']
 		pi_lb= data['arr_1']
-		pi_l_e.append(np.pi-pi_l[0])
-		pi_lb_e.append(np.pi-pi_lb[0])
+		pi_l_e.append((np.pi-pi_l[0])/np.pi)
+		pi_lb_e.append((np.pi-pi_lb[0])/np.pi)
 
 #Laplace
 	
 	plt.subplot(1,2,1)
 
 
-	plt.plot(_N,pi_l_e,'-*')
+	plt.semilogx(_N,np.sort(pi_l_e),'*')
 	plt.title('Error:  Pi_real-Pi_estimado \nMétodo de Laplace',fontsize=11)
 	plt.xlabel('N agujas lanzadas', fontsize=11)
 	plt.ylabel('Frecuencia Pi', fontsize=11)	
@@ -108,17 +109,26 @@ def errores(N,k):
 
 	plt.subplot(1,2,2)
 
-	plt.plot(_N,pi_lb_e,'-*')
+	plt.semilogx(_N,np.sort(pi_lb_e),'*')
 	plt.title('Error:  Pi_real-Pi_estimado \nMétodo de Laplace Buffon',fontsize=11)
 	plt.xlabel('N agujas lanzadas', fontsize=11)
 	plt.ylabel('Frecuencia Pi simulado ', fontsize=11)	
 	plt.grid()
-	plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
-	plt.savefig("images/Errores.jpg", bbox_inches='tight')	
-	
-
+	#plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
+	plt.savefig("images/Errores.jpg")	
+	#plt.show()
 	plt.close(2)
+	return nn,pi_l_e
+
+
 
 if __name__=='__main__':
+	N=np.logspace(10,2,50,endpoint=True,dtype=np.int64) #Para generar un valor N distanciado log
+	N_jp=N[10:50:2]
 
-	print('hola')
+	nn,bb=errores(N_jp,10)
+		
+	AA=np.sort(nn,-1)
+	nn1=np.where(N_jp==nn[2])
+	print(nn1)
+	
