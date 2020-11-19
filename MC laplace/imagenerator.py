@@ -70,8 +70,9 @@ def dibujar(txt):
 
 
 def errores(N,k):
-	''' se grafican los errores en conjunto'''
-
+	''' se grafican los errores de un conjunto
+	N y un numero de repeticiones k
+	'''
 	_N=N
 	_k=k
 
@@ -82,8 +83,6 @@ def errores(N,k):
 
 	pi_l_e,	pi_lb_e, nn=[],[],[]
 	
-	
-
 	for txt in contenido:
 		N,_=nombres(txt)
 		nn.append(N)
@@ -99,7 +98,7 @@ def errores(N,k):
 	plt.subplot(1,2,1)
 
 
-	plt.semilogx(_N,np.sort(pi_l_e),'*')
+	plt.semilogx(_N,pi_l_e,'*')
 	plt.title('Error:  Pi_real-Pi_estimado \nMétodo de Laplace',fontsize=11)
 	plt.xlabel('N agujas lanzadas', fontsize=11)
 	plt.ylabel('Frecuencia Pi', fontsize=11)	
@@ -109,7 +108,7 @@ def errores(N,k):
 
 	plt.subplot(1,2,2)
 
-	plt.semilogx(_N,np.sort(pi_lb_e),'*')
+	plt.semilogx(_N,pi_lb_e,'*')
 	plt.title('Error:  Pi_real-Pi_estimado \nMétodo de Laplace Buffon',fontsize=11)
 	plt.xlabel('N agujas lanzadas', fontsize=11)
 	plt.ylabel('Frecuencia Pi simulado ', fontsize=11)	
