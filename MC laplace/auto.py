@@ -61,35 +61,8 @@ N1=N[10:50:1]
 
 
 
-contenido = os.listdir('binaries/') #obtenemos en una lista
-#los nombres de todos los binarios
-
-aux=[]
-#recorriendo para cada binario
-for txt in contenido:
-	a,b = nombres(txt)
-	aux.append(int(a))
-	dibujar(txt)   #se grafica la distribución 
-#e histograma para cada binario
-
-
-#$b=np.array(int(a))
-#Como la generacion de los binarios no guardan
-#un orden (se combinan binarios generados en distintas
-#computadoras) recuperamos un orden e index de menor a mayor
-b1=np.sort(np.array(aux))
-#el vector b1 queda ordenado de menor a mayor, para poder
-#graficar los errores ordenaremos el vector y los datos
-
-
-
-
-
 
 
 #grafica errores
 
-errores(N1,k)
-
-
-
+errores(N1)
