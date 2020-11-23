@@ -16,7 +16,7 @@ def nombres(txt):
 	else:
 		N=0
 		k=0
-		print('Mala terminologia')
+		print('Mala terminologia binario: '+txt)
 	return N,k
 
 
@@ -68,67 +68,68 @@ def dibujar(txt):
 	plt.close(1)
 
 
-
-def errores(N,k):
-	''' se grafican los errores en conjunto'''
-
-	_N=N
-	_k=k
-
-
+def errores(N):
+	''' se grafican los errores de los binarios de un conjunto
+	N de datos evaluados k veces
+	'''
 	contenido = os.listdir('binaries/')
-
 	plt.figure(2,figsize=(15,10))
-
-	pi_l_e,	pi_lb_e, nn=[],[],[]
 	
 	
+	pi_l_e,	pi_lb_e,aux=[],[],[]
 
 	for txt in contenido:
-		N,_=nombres(txt)
-		nn.append(N)
+		a=txt[1:10]
+		aux.append(float(a))
 		path='binaries/'+txt
 		data = np.load(path,allow_pickle=True)
 		pi_l = data['arr_0']
 		pi_lb= data['arr_1']
-		pi_l_e.append((np.pi-pi_l[0])/np.pi)
-		pi_lb_e.append((np.pi-pi_lb[0])/np.pi)
+		pi_l_e.append(100*(np.pi-pi_l[0])/np.pi)
+		pi_lb_e.append(100*(np.pi-pi_lb[0])/np.pi)
+
+
+	ind=[]
+	for i in np.sort(N):        #se crea un vector de indices ordenado
+		auxi='%.3e'%i
+		ind.append(float(auxi))
+		io=np.array(ind)
+
+
+	ax=[]
+	for ij in aux:
+		k=np.where(io==ij)
+		ax.append(k)
+	indices_=np.array(ax)
+	indices=indices_[:,0,0]
+
+#el vector indices nos muestra el orden relativo que
+#se obtiene al recuperar valores de error
+
+# las variables pi_l_e y pi_lb_e recuperan los valroes
+# de los binarios en desorden, para graficarlos adecuadamente
+# 
 
 #Laplace
-	
-	plt.subplot(1,2,1)
 
-
-	plt.semilogx(_N,np.sort(pi_l_e),'*')
-	plt.title('Error:  Pi_real-Pi_estimado \nMétodo de Laplace',fontsize=11)
+	plt.semilogx(io[indices],pi_l_e,'ob',label='Laplace')
+	plt.title('Error:  Pi_estimado vs Número de Lanzamientos',fontsize=11)
 	plt.xlabel('N agujas lanzadas', fontsize=11)
-	plt.ylabel('Frecuencia Pi', fontsize=11)	
-	plt.grid()
-
+	plt.ylabel('Error Porcentual Pi', fontsize=11)	
 #laplace Buffon
-
-	plt.subplot(1,2,2)
-
-	plt.semilogx(_N,np.sort(pi_lb_e),'*')
-	plt.title('Error:  Pi_real-Pi_estimado \nMétodo de Laplace Buffon',fontsize=11)
-	plt.xlabel('N agujas lanzadas', fontsize=11)
-	plt.ylabel('Frecuencia Pi simulado ', fontsize=11)	
+	plt.semilogx(io[indices],pi_lb_e,'or',label='Laplace-Buffon')
+	plt.legend()
 	plt.grid()
-	#plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
 	plt.savefig("images/Errores.jpg")	
-	#plt.show()
 	plt.close(2)
-	return nn,pi_l_e
+	
 
 
 
 if __name__=='__main__':
-	N=np.logspace(10,2,50,endpoint=True,dtype=np.int64) #Para generar un valor N distanciado log
-	N_jp=N[10:50:2]
 
-	nn,bb=errores(N_jp,10)
-		
-	AA=np.sort(nn,-1)
-	nn1=np.where(N_jp==nn[2])
-	print(nn1)
+	N=np.logspace(10,2,50,endpoint=True,dtype=np.int64) #Para generar un valor N distanciado log
+	N_jp=N[10:50:1]
+	errores(N_jp)
+
 	
