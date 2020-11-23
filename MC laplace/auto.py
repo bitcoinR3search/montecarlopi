@@ -61,8 +61,6 @@ N1=N[10:50:1]
 
 
 
-
-
 #grafica errores
 
 errores(N1)
