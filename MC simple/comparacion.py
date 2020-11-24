@@ -49,12 +49,12 @@ for i in (n):
     disc2.append(pi-np.pi) #discrepancia respecto al valor de referencia
     piv2.append(pi)
 #los parametros que escogi para las distribuciones fueron abase de prueba y errror
-
+plt.title('Comparación de distribuciones')
 plt.semilogx(n,disc,'g', label='normal')
 plt.semilogx(n,disc1,'r', label='uniforme')
 plt.semilogx(n,disc2,'b', label='exponencial')
-plt.ylabel('discrepancia')
-plt.xlabel('Numero de tiradas')
+plt.ylabel('Discrepancia')
+plt.xlabel('Numero de lanzamientos')
 plt.grid()
 plt.legend()
 plt.show()

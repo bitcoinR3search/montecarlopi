@@ -12,7 +12,6 @@ def nombres(txt):
 		
 		if txt[11]=='k':
 			k=int(txt[12:15])			
-
 	else:
 		N=0
 		k=0
@@ -66,6 +65,9 @@ def dibujar(txt):
 	plt.grid()
 	plt.savefig("images/histograms/pi_N%.3ek%d.jpg"%(N_,k_),bbox_inches='tight')
 	plt.close(1)
+
+
+
 
 
 def errores(N):

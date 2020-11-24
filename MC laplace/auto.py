@@ -36,6 +36,12 @@ for i in N:
 
 
 
+#generar los graficos del histograma
+cnt = os.listdir('binaries/')
+
+for i in cnt:
+	dibujar(i)
+
 
 """ Una vez generados los binarios, esta sección 
 del programa nos ayuda a generar los gráficos
