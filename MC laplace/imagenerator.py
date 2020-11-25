@@ -2,7 +2,9 @@
 import matplotlib.pyplot as plt
 import numpy as np  
 import os
-
+import matplotlib as mpl 
+params = {'xtick.labelsize': 20, 'ytick.labelsize': 20}
+mpl.rcParams.update(params)
 
 
 def nombres(txt):
@@ -74,6 +76,9 @@ def errores(N):
 	''' se grafican los errores de los binarios de un conjunto
 	N de datos evaluados k veces
 	'''
+
+
+
 	contenido = os.listdir('binaries/')
 	plt.figure(2,figsize=(15,10))
 	
@@ -114,13 +119,13 @@ def errores(N):
 
 #Laplace
 
-	plt.semilogx(io[indices],pi_l_e,'ob',label='Laplace')
-	plt.title('Error:  Pi_estimado vs Número de Lanzamientos',fontsize=11)
-	plt.xlabel('N agujas lanzadas', fontsize=11)
-	plt.ylabel('Error Porcentual Pi', fontsize=11)	
+	plt.semilogx(io[indices],pi_l_e,'ob',label='Buffon')
+	plt.title('Error:  Pi estimado vs Número de Lanzamientos',fontsize=18)
+	plt.xlabel('N agujas lanzadas', fontsize=18)
+	plt.ylabel('Error Porcentual Pi', fontsize=18)	
 #laplace Buffon
 	plt.semilogx(io[indices],pi_lb_e,'or',label='Laplace-Buffon')
-	plt.legend()
+	plt.legend(prop={'size': 16})
 	plt.grid()
 	plt.savefig("images/Errores.jpg")	
 	plt.close(2)
