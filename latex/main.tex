@@ -126,6 +126,10 @@ Para obtener esta aproximación se necesitan generar los puntos aleatoriamente c
 
 En el caso de la estimación de Pi usando la propuesta experimental de Buffon y su extensión de Laplace, tenemos más variables aleatorias a considerar. Puesto que cada aguja, con un centro en (𝑥𝑖,𝑦𝑖), tiene relacionada otra variable aleatoria que corresponde al ángulo de inclinación 𝜃 de la aguja.
 
+Si bien en este caso se recurre a una función trigonométrica para evaluar la inclinación y considerar a las agujas que cruzan la línea, el ordenador usa recursivamente el valor de Pi para calcular la función coseno, siendo este un error “histórico” ya que recurre al valor de pi para calcular al mismo. Por esta razón se usó una corrección geométrica que evita el uso de funciones trigonométricas.
+Pasando de requerir generar aleatoriamente un ángulo θ, a generar aleatoriamente desplazamientos δx y δy. En la siguiente figura se muestra una representación gráfica de cómo se realiza la simulación con un número grande de lanzamientos aleatorios con distribución uniforme.
+
+
 \begin{table*}[t]
   \caption{A double column table.}
   \label{tab:commands}
