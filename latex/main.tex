@@ -1,6 +1,7 @@
 % VLDB template version of 2020-08-03 enhances the ACM template, version 1.7.0:
 % https://www.acm.org/publications/proceedings-template
 % The ACM Latex guide provides further information about the ACM template
+\usepackage[spanish]{babel}
 
 \documentclass[sigconf, nonacm]{acmart}
 
@@ -35,43 +36,6 @@
 }
 \email{trovato@corporation.com}
 
-\author{Lars Th{\o}rv{\"a}ld}
-\orcid{0000-0002-1825-0097}
-\affiliation{%
-  \institution{The Th{\o}rv{\"a}ld Group}
-  \streetaddress{1 Th{\o}rv{\"a}ld Circle}
-  \city{Hekla}
-  \country{Iceland}
-}
-\email{larst@affiliation.org}
-
-\author{Valerie B\'eranger}
-\orcid{0000-0001-5109-3700}
-\affiliation{%
-  \institution{Inria Paris-Rocquencourt}
-  \city{Rocquencourt}
-  \country{France}
-}
-\email{vb@rocquencourt.com}
-
-\author{J\"org von \"Arbach}
-\affiliation{%
-  \institution{University of T\"ubingen}
-  \city{T\"ubingen}
-  \country{Germany}
-}
-\email{jaerbach@uni-tuebingen.edu}
-\email{myprivate@email.com}
-\email{second@affiliation.mail}
-
-\author{Wang Xiu Ying}
-\author{Zhe Zuo}
-\affiliation{%
-  \institution{East China Normal University}
-  \city{Shanghai}
-  \country{China}
-}
-\email{firstname.lastname@ecnu.edu.cn}
 
 \author{Donald Fauntleroy Duck}
 \affiliation{%
@@ -89,6 +53,7 @@
 %%
 %% The abstract is a short summary of the work to be presented in the
 %% article.
+\renewcommand{\abstractname}{Resumen}
 \begin{abstract}
 En este artículo se presenta los resultados de tres metodologías diferentes en las que se aplicó una simulación Monte Carlo para estimar el valor de Pi: el método de comparación de áreas, el método propuesto por Buffon y la extensión de Laplace. Los tres casos se desarrollaron en un lenguaje de alto nivel, Python y la librería Numpy que le otorgan un performance optimizado. Se estudió con detalle el resultado no determinista de las simulaciones y se demostró que cumplen con los teoremas fundamentales de la probabilidad.
 \end{abstract}
