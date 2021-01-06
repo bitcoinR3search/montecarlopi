@@ -76,18 +76,48 @@ aleatorios o pseudoaleatorios para estudiarlo.>> \cite{Gentle}
 
 El método cobra una especial relevancia las últimas décadas debido a que se produjeron sustanciales y significativos avances respecto a la potencia de los procesadores y las distintas arquitecturas informáticas. Es ampliamente usado en problemas donde obtener un resultado analítico no es posible, o en problemas que contienen demasiada complejidad (como es el caso de la ecuación de transporte de Boltzmann para partículas sin carga).\cite{Andreas}
 
-\section{}
+\section{marco teorico}
+\section{Modelo de simulación}
+\subsection{Entorno de desarrollo}
+
+Como quedó manifiesto en el anterior punto el método Monte Carlo tiene una precisión proporcional a $\frac{1}{\sqrt{N}}$. En comparación con otros métodos numéricos determinísticos (como por ejemplo el método de trapecios o Simpson para encontrar la integral de una función definida) que tienen un error de aproximación proporcional a $\frac{1}{N^2}$, los métodos que aplican Monte Carlo requieren una cantidad considerablemente mayor de datos a procesar. Sumado este hecho a la complejidad que puede involucrar el modelamiento de las interacciones aleatorias, es que generalmente se prefiere usar lenguajes de programación de bajo nivel que permitan minimizar el tiempo de cómputo total.
+Por ejemplo, es común encontrar desarrollos en c, c++ y Fortran entre otros. Existiendo hoy librerías que facilitan la generación de números pseudoaleatorios y el manejo matemático. Aún con esta ventaja el código necesario para una aplicación final suele ser bastante complicado y extenso.
+Estos dos criterios identificados se consideraron para la selección del entorno de desarrollo:
+1. El tiempo de procesamiento.
+2. La legibilidad del código.
+Siendo Python un lenguaje de alto nivel que cumple con el segundo criterio, al incluir la librería Numpy (librería de procesamiento numérico para Python) obtenemos una velocidad de procesamiento comparable a C. Adicionalmente se utilizó una librería para la representación de los datos, Matplotlib.
+Se detalla todo el código y las dependencias en el repositorio del proyecto:
+
+https://github.com/CobraPython/montecarlopi
 
 
-\subsection{Figures}
+\subsection{Generación de números pseudoaleatorios}
 
-Aliquam justo ante, pretium vel mollis sed, consectetur accumsan nibh. Nulla sit amet sollicitudin est. Etiam ullamcorper diam a sapien lacinia faucibus. Duis vulputate, nisl nec tincidunt volutpat, erat orci eleifend diam, eget semper risus est eget nisl. Donec non odio id neque pharetra ultrices sit amet id purus. Nulla non dictum tellus, id ullamcorper libero. Curabitur vitae nulla dapibus, ornare dolor in, efficitur enim. Cras fermentum facilisis elit vitae egestas. Nam vulputate est non tellus efficitur pharetra. Vestibulum ligula est, varius in suscipit vel, porttitor id massa. Nulla placerat feugiat augue, id blandit urna pretium nec. Nulla velit sem, tempor vel mauris ut, porta commodo quam \autoref{fig:duck}.
+Existen distintos métodos para la generación de números aleatorios, sin embargo, la generación de estos en ordenador parte necesariamente desde una semilla (seed) que es un valor concedido por el usuario. Con esta semilla se genera una única serie de números aleatorios, pudiendo ser replicados a partir de esta. Por esta razón es que se denominan números pseudo aleatorios.
+La librería Numpy utiliza el algoritmo Mersenne Twistter (MT19937). \cite{Tanguy}
+Para la generación de números pseudoaleatorios. Este método particular tiene la cualidad de tener una periodicidad bastante grande en la generación de números: 219937−1. \cite{Makoto}
+
+\subsection{Métodos de estimación de Pi}
+\subsubsection{Método Simple para la estimación de Pi}
+
+Se propone estimar el número de Pi con el siguiente modelo:
+Consideramos un cuadrado de lado L, con una circunferencia en su interior de radio L.
+La relación de áreas se da en la ecuación \ref{areas}. 
+\begin{equation}
+\frac{A_{circunferencia}}{A_{cuadrado}}=\frac{\pi L^2}{L^2} 
+\label(areas) 
+\end{equation}}
+
+Una forma de calcular esta relación de áreas es lanzar al azar puntos dentro del cuadrado. Estos puntos pueden quedar también dentro de la circunferencia, la relación de áreas quedara expresada por aquellos puntos que estén dentro del circulo sobre el total.
+En la gráfica \ref{area} se muestra un ejemplo del experimento propuesto, mostrando un solo cuadrante ya que las áreas son simétricas en cada eje.
+
+
 
 \begin{figure}
   \centering
-  \includegraphics[width=\linewidth]{figures/duck}
-  \caption{An illustration of a Mallard Duck. Picture from Mabel Osgood Wright, \textit{Birdcraft}, published 1897.}
-  \label{fig:duck}
+  \includegraphics[width=\linewidth]{figures/areas}
+  \caption{Representación gráfica de como se definen areas para el cálculo de Pi}
+  \label{area}
 \end{figure}
 
 \begin{table*}[t]
