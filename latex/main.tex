@@ -47,7 +47,9 @@
 %%
 %% The abstract is a short summary of the work to be presented in the
 %% article.
+\renewcommand{\figurename}{Figura}
 \renewcommand{\abstractname}{Resumen}
+
 \begin{abstract}
 En este artículo se presenta los resultados de tres metodologías diferentes en las que se aplicó una simulación Monte Carlo para estimar el valor de Pi: el método de comparación de áreas, el método propuesto por Buffon y la extensión de Laplace. Los tres casos se desarrollaron en un lenguaje de alto nivel, Python y la librería Numpy que le otorgan un performance optimizado. Se estudió con detalle el resultado no determinista de las simulaciones y se demostró que cumplen con los teoremas fundamentales de la probabilidad.
 \end{abstract}
@@ -101,11 +103,10 @@ Para la generación de números pseudoaleatorios. Este método particular tiene 
 
 Se propone estimar el número de Pi con el siguiente modelo:
 Consideramos un cuadrado de lado L, con una circunferencia en su interior de radio L.
-La relación de áreas se da en la ecuación \ref{areas}. 
+La relación de áreas se da en la ecuación \ref{aeq}. 
 \begin{equation}
-\frac{A_{circunferencia}}{A_{cuadrado}}=\frac{\pi L^2}{L^2} 
-\label(areas) 
-\end{equation}}
+\frac{A_{circunferencia}}{A_{cuadrado}}=\frac{\pi L^2}{L^2} \label{aeq} 
+\end{equation}
 
 Una forma de calcular esta relación de áreas es lanzar al azar puntos dentro del cuadrado. Estos puntos pueden quedar también dentro de la circunferencia, la relación de áreas quedara expresada por aquellos puntos que estén dentro del circulo sobre el total.
 En la gráfica \ref{area} se muestra un ejemplo del experimento propuesto, mostrando un solo cuadrante ya que las áreas son simétricas en cada eje.
@@ -118,6 +119,22 @@ En la gráfica \ref{area} se muestra un ejemplo del experimento propuesto, mostr
   \caption{Representación gráfica de como se definen areas para el cálculo de Pi}
   \label{area}
 \end{figure}
+
+
+
+
+Queda bastante ejemplificado que mientras mayor sea el número de puntos, las áreas quedan mejor definidas.
+Para obtener esta aproximación se necesitan generar los puntos aleatoriamente con una distribución uniforme, es decir, con igual probabilidad de caer dentro y fuera del área del cuarto de circunferencia.
+
+\subsubsection{Método de Buffon para la estimación de Pi}
+
+En el caso de la estimación de Pi usando la propuesta experimental de Buffon y su extensión de Laplace, tenemos más variables aleatorias a considerar. Puesto que cada aguja, con un centro en (𝑥𝑖,𝑦𝑖), tiene relacionada otra variable aleatoria que corresponde al ángulo de inclinación 𝜃 de la aguja.
+
+Si bien en este caso se recurre a una función trigonométrica para evaluar la inclinación y considerar a las agujas que cruzan la línea, el ordenador usa recursivamente el valor de Pi para calcular la función coseno, siendo este un error “histórico” ya que recurre al valor de pi para calcular al mismo. Por esta razón se usó una corrección geométrica que evita el uso de funciones trigonométricas.
+Pasando de requerir generar aleatoriamente un ángulo θ, a generar aleatoriamente desplazamientos δx y δy. En la siguiente figura se muestra una representación gráfica de cómo se realiza la simulación con un número grande de lanzamientos aleatorios con distribución uniforme.
+
+
+
 
 \begin{table*}[t]
   \caption{A double column table.}
