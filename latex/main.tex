@@ -4,13 +4,10 @@
 %\documentclass[onecolumn]{rbf}
 
 \usepackage{amsmath}
-\usepackage{natbib}
 \usepackage[utf8]{inputenc}
 %\usepackage[latin1]{inputenc}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\mr}{{\bf RBF: }}
-\newcommand{\jim}{{\bf JY: }}
+\usepackage{url}
+\usepackage{apacite}
 
 \begin{document}
 
@@ -34,7 +31,7 @@ En este artículo se presenta los resultados de tres metodologías diferentes en
 
 
 \Abstract
-This article represents the result of three different metodologies for estimate the pi value with Monte Carlo's simulation: the comparition area's method, el método propuesto por Buffon y la extensión de Laplace. The three cases had been developed in  Python ( high level language) and Numpy library which give it an optimized performance. The non-deterministic result of the simulations was studied in detail and it was shown that they comply with the fundamental theorems of probability.
+This article represents the result of three different metodologies for estimate the pi value with Monte Carlo's simulation: the comparition area's method, the method proposed by Bufffo and the Laplace's extention. The three cases had been developed in  Python ( high level language) and Numpy library which give it an optimized performance. The non-deterministic result of the simulations was studied in detail and it was shown that they comply with the fundamental theorems of probability.
 
 \keywords{Biographies, tributes, personal notes -- Control of chaos, applications of chaos}
 \end{abstract}
@@ -74,12 +71,13 @@ para partículas sin carga).\cite{Kling}
 \section{Modelo de Simulación.}
 \subsection{Entorno de desarrollo}
 
-Como quedo manifiesto en el anterior punto el método Monte Carlo tiene una precisión proporcional a $\frac{1}{\sqrt{N}}$. En comparación con otros métodos numéricos determinístico (como por ejemplo el método de trapecios o Simpson para encontrar la integral de una función definida) que tienen un error de aproximación proporcional a $\frac{1}{N^2}$, los métodos que aplican Monte Carlo requieren una cantidad considerable mayor de datos a procesar. Sumado este hecho a la complejidad que puede involucrar el modelamiento de las interacciones aleatorias, es que generalmente se prefiere usar lenguajes de programación de bajo nivel que permitan minimizar el tiempo de cómputo total.
+Como quedo manifiesto en el anterior punto el método Monte Carlo tiene una precisión proporcional a $\frac{1}{\sqrt{N}}$. En comparación con otros métodos numéricos determinísticos (como por ejemplo el método de trapecios o Simpson para encontrar la integral de una función definida) que tienen un error de aproximación proporcional a $\frac{1}{N^2}$ en el mejor de los casos, los métodos que aplican Monte Carlo (como por ejemplo la integración por Monte Carlo) requieren una cantidad considerable mayor de datos a procesar. Sumado este hecho a la complejidad que puede involucrar el modelamiento de las interacciones aleatorias, es que generalmente se prefiere usar lenguajes de programación de bajo nivel que permitan optimizar el tiempo de cómputo total.
 
 Por ejemplo, es común encontrar desarrollos en c, c++ y Fortran entre otros. Existiendo hoy librerías que facilitan la generación de números pseudoaleatorios y el manejo matemático. Aún con esta ventaja el código necesario para una aplicación final suele ser bastante complicado y extenso.
 Estos dos criterios identificados se consideraron para la selección del entorno de desarrollo:
+
 1. El tiempo de procesamiento.
-2. La legibilidad del código.
+2. La legibilidad y simplificación en el código.
 
 Siendo Python un lenguaje de alto nivel que cumple con el segundo criterio, al incluir la librería Numpy (librería de procesamiento numérico para Python) obtenemos una velocidad de procesamiento comparable a C. Adicionalmente se utilizó una librería para la representación de los datos, Matplotlib.
 Se detalla todo el código y las dependencias en el repositorio del proyecto:
@@ -159,16 +157,10 @@ Como el lector habrá percibido durante la lectura de esta entrevista, la teorí
 Agradezco al MPIPKS por haber posibilitado mi participación en el taller ``Multistability and Tipping: From Mathematics and Physics to Climate and Brain". A Sergio Yañez Pagans (hoy en la Universidad de Arizona) por el excelente trabajo de edición del vídeo de la entrevista y por su permanente entusiasmo en las actividades científicas. A Fernando Poma Ajoruro por haber realizado parte de la transcripción y por la permanente colaboración que brinda al Grupo de Sistemas Complejos de la UMSA.
 \end{acknowledgments}
 
-\begin{thebibliography}{32}
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-
-
-\bibitem[{Wikipedia(2017)}]{WIKI17}
-Wikipedia contributors. ``James A. Yorke." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, Web. 22 Mayo 2017.
 
 
 
-\bibitem[{YouTube (2016)}]{YT16}
-James Yorke interview by Marcelo Ramírez, Bolivian physicist, https://www.youtube.com/watch?v=cGNMyT6NNT0, Web. 7 Diciembre 2016.
-\end{thebibliography}
+
+\bibliographystyle{apacite}
+\bibliography{bibliografia.bib}{32}
 \end{document} 
