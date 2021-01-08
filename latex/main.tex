@@ -63,7 +63,108 @@ contienen demasiada complejidad (como es el
 caso de la ecuación de transporte de Boltzmann
 para partículas sin carga).\cite{Kling}
 
+\section{Marco Teorico}\label{inter}
+El estudio matemático formal del azar se remonta hace bastantes siglos. En 1654 motivados por dos problemas propuestos por Antoine Gombaud (le Chevalier de Méré), basados en las observaciones de los juegos de azar de la época, es que se reúnen a resolver el desafío matemático personalidades como Pascal, Cardano y Fermat entre otros dando inicio a la teoría clásica de la probabilidad. Es en este periodo que distintos matemáticos advierten la relación de la teoría combinatoria y la incipiente teoría de la probabilidad.
 
+Un matemático que realiza un interesante aporte en este aspecto es Leibniz, el cual luego de realizar la disertación titulada Dissertatio de Arte combinatoria, encuentra particular interés por ‘la certidumbre’.
+
+La probabilidad para Leibniz es un criterio objetivo de verdad. Es una lógica de lo contingente (que puede suceder o no) que se contrapone a la lógica de lo necesario. Permitiendo a la probabilidad alcanzar la verdad. El interés de Leibniz por los juegos iba más allá de la teoría de la probabilidad, sus aplicaciones podrían aplicarse al Arte de Inventar y subsecuentemente a la construcción de las características universales, temas que le parecían de mayor interés que a otros autores. (CHARLES, 1993)
+\subsection{Experimentación y la teoría de probabilidad.}
+En 1777, el naturalista francés, el conde de Buffon (1707-1788) propuso el primer experimento que utilizaba un método de Monte Carlo, pues dependía de un hecho completamente aleatorio: la caída de una aguja luego de lanzarla. Las agujas son lanzadas aleatoriamente en un piso con un patrón de rayas separadas una cierta distancia. Buffon considero que los centros están uniformemente distribuidos en un piso infinito. Las agujas no ruedan a las aberturas como lo harían en la vida real, ni estas interactúan entre sí. Además, el ángulo respecto a la horizontal es considerado distribuido uniforme entre 0 y pi/2.
+
+El resultado al que se llegó relaciona la probabilidad de cruzar una de las rayas con la distancia de separación, la longitud de la aguja y el valor de pi. Esta se expresa en la ecuación 1
+
+\begin{equation}
+    P=\frac{2l}{d\pi}
+\end{equation}
+
+Se conoce como la extensión de Laplace al problema de Buffon cuando se considera tanto líneas verticales como horizontales. Se llama Buffon-Laplace pues, aunque Buffon resolvió este problema contenía un error que más tarde, 1812, fue corregido por Laplace.
+
+\begin{equation}
+    P=\frac{2l(a+b)}{ab\pi}
+\end{equation}
+De esta propuesta, se pretende obtener el valor de pi. La probabilidad se obtiene empíricamente al realizar el experimento un número grande de veces y contar cada caso.
+
+Este problema histórico fue estudiado en ese entonces como una curiosidad poco práctica, debido a que obtener un resultado preciso requería un número grande de repeticiones. 
+
+Durante el siglo XX con el advenimiento de las nuevas tecnologías es que el método de Monte Carlo vuelve a cobrar relevancia, pues permite un número grande de repeticiones sin complicación. Sin embargo, el manejo teórico de la matemática involucrada es bastante conocido, se realiza una breve revisión.
+
+\subsection{Teorema de los Números Grandes}
+Sea $X_1,..., X_n$ una sucesión de variables aleatorias, diremos que la sucesión de ${X_n}$ converge en probabilidad a X (que es otra variable aleatoria) si solo si para todo $\forall \varepsilon >0$:
+
+\begin{equation}
+    \lim_{x \to \infty}(P[(X_n - X)>\varepsilon]=0)
+\end{equation}
+
+Siendo conocida esta expresión como criterio de convergencia débil. 
+
+Tomamos la variable aleatoria de interés, el promedio:
+$\overline{x}=\frac{1}{n}\sum X_i$  
+
+Aplicando el operador lineal Esperanza:
+
+\begin{equation}
+    E(\overline{X_n}=E(\frac{1}{n} \sum X_i))
+\end{equation}
+\begin{equation}
+    E(\overline{X_n}=\frac{1}{n} \sum E(X_i))
+\end{equation}
+Si consideramos que la sucesión de variables $X_i$ son independientes e idénticamente distribuidas, la Esperanza para cada variable es la media $\mu$.
+\begin{equation}
+    E(\overline{X_n})=\frac{1}{n} *n\mu
+\end{equation}
+\begin{equation}
+    E(\overline{X_n})=\mu
+\end{equation}
+Esta relación nos muestra que el valor esperado del promedio de una muestra tiende al valor medio.
+
+De igual manera con el operador varianza tenemos:
+\begin{equation}
+    V(\overline{X_n})=V(\frac{1}{n} \sum X_i)
+\end{equation}
+Con el supuesto de las variables $(X_i )$, son independientes e idénticamente distribuidas, la varianza de la suma, es la suma de las varianzas:
+\begin{equation}
+    V(\overline{X_n})=\frac{1}{n^2} \sum V(X_i)
+\end{equation}
+Al ser idéntica para todos tenemos:
+\begin{equation}
+    V({X_i})=\sigma^2
+\end{equation}
+\begin{equation}
+    V(\overline{X_n}=\frac{1}{n^2} *n\sigma^2 =\frac{\sigma^2}{n}
+\end{equation}
+Con los resultados de la esperanza y varianza del promedio, se puede enunciar el siguiente teorema: 
+
+Sea $X_n$ una sucesión de una variable aleatoria independiente e idénticamente distribuida tal que $E(X_i^2 )<\infty  \forall_i ,y:$
+\begin{equation}
+    E({X_i})=\mu
+\end{equation}
+\begin{equation}
+    V({X_i})=\sigma^2
+\end{equation}
+Entonces el promedio de la secuencia $X_n$ converge en probabilidad a $\mu$. Es decir que para una población que tiene una media $\mu$, si se toma una muestra y se calcula el promedio muestral, este tiende al valor de $\mu$ mientras n tienda a $\infty$. 
+Esto se demuestra al tomar un valor $\varepsilon> 0$, entonces, usando la relación de acotación de Chemichev:
+\begin{equation}
+    0\leq P[(\overline{X_n}-\mu)>\varepsilon] \leq \frac{E[(\overline{X_n}-\mu)^2]}{\varepsilon^2}
+\end{equation}
+$E[(\overline{X_n}-\mu)^2]$ es la varianza del promedio, entonces tenemos la relación:
+\begin{equation}
+    0\leq P[(\overline{X_n}-\mu)>\varepsilon] \leq \frac{\sigma^2}{n\varepsilon^2}
+\end{equation}
+Mostrando que cuando n tiende a un número grande, la probabilidad se anula y por consecuencia el promedio converge en probabilidad a $\mu$.
+\subsection{Teorema del Limite Central}
+Sea $X_(1,...,) X_n$ una sucesión de variables aleatorias, independientes e idénticamente distribuidas tales que $\forall_i$  tengan el segundo momento finito  $E(X_i^2)<\infty$ con una media $\infty$ y una varianza $\sigma^2$ distinta de cero. Entonces, si n es suficientemente grande, la variable aleatoria promedio:
+\begin{equation}
+    \overline{X}=\frac{1}{n}\sum X_i
+\end{equation}
+Tiene aproximadamente una distribución normal con:
+\begin{equation}
+    \mu_{\overline{X}} =\mu
+\end{equation}
+\begin{equation}
+    V_{\overline{X}} =\frac{\sigma^2}{n}
+\end{equation}
+El teorema central de la probabilidad tiene una importancia categórica al ser enunciada para una sucesión de variables con cualquier distribución. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   midelo de simulacion
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,7 +217,7 @@ Para obtener esta aproximación se necesitan generar los puntos aleatoriamente c
 
 \subsection{Método de Buffon para la estimación de Pi}
 
-En el caso de la estimación de Pi usando la propuesta experimental de Buffon y su extensión de Laplace tenemos más variables aleatorias a considerar. Puesto que cada aguja cae aleatoriamente con un centro en $(𝑥_𝑖,𝑦_𝑖)$, tiene relacionada otra variable aleatoria que corresponde al ángulo de inclinación $\theta$ de la aguja. La figura \ref{aguja} nos muestra un ejemplo.
+En el caso de la estimación de Pi usando la propuesta experimental de Buffon y su extensión de Laplace tenemos más variables aleatorias a considerar. Puesto que cada aguja cae aleatoriamente con un centro en $(��_��,��_��)$, tiene relacionada otra variable aleatoria que corresponde al ángulo de inclinación $\theta$ de la aguja. La figura \ref{aguja} nos muestra un ejemplo.
 
 
 
