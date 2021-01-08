@@ -1,3 +1,37 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{Kling}
+AF~Bielajew.
+\newblock Some random thoughts on monte carlo electron and photon transport.
+\newblock In {\em Advanced Monte Carlo for Radiation Physics, Particle
+  Transport Simulation and Applications}, pages 1--6. Springer, 2001.
+
+\bibitem{librobase1}
+Glen Cowan.
+\newblock {\em Statistical data analysis}.
+\newblock Oxford university press, 1998.
+
+\bibitem{Gentle}
+James~E Gentle.
+\newblock {\em Random number generation and Monte Carlo methods}.
+\newblock Springer Science \& Business Media, 2006.
+
+\bibitem{Statistics}
+Werner Krauth.
+\newblock {\em Statistical mechanics: algorithms and computations}, volume~13.
+\newblock OUP Oxford, 2006.
+
+\bibitem{Makoto}
+Makoto Matsumoto and Takuji Nishimura.
+\newblock Mersenne twister: a 623-dimensionally equidistributed uniform
+  pseudo-random number generator.
+\newblock {\em ACM Transactions on Modeling and Computer Simulation (TOMACS)},
+  8(1):3--30, 1998.
+
+\bibitem{Tanguy}
+Página Web.
+\newblock {\em How Does Your Computer Generate Random Numbers?}, 2019.
+\newblock
+  \url{https://www.sicara.ai/blog/2019-01-28-how-computer-generate-random-numbers}.
 
 \end{thebibliography}

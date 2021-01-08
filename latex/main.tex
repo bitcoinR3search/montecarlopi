@@ -4,10 +4,11 @@
 %\documentclass[onecolumn]{rbf}
 
 \usepackage{amsmath}
-\usepackage{natbib}
+%\usepackage{natbib}
 \usepackage[utf8]{inputenc}
 %\usepackage[latin1]{inputenc}
-
+%\usepackage{apacite}
+\usepackage{url}
 
 \begin{document}
 
@@ -25,7 +26,7 @@
 
 \begin{abstract}
 \Resumen
-En este artículo se presenta los resultados de tres metodologías diferentes en las que se aplicó una simulación Monte Carlo para estimar el valor de Pi: el método de comparación de áreas, el método propuesto por Buffon y la extensión de Laplace. Los tres casos se desarrollaron en un lenguaje de alto nivel, Python y la librería Numpy que le otorgan un performance optimizado. Se estudió con detalle el resultado no determinista de las simulaciones y se demostró que cumplen con los teoremas fundamentales de la probabilidad.
+En este artículo se presenta los resultados de tres metodologías diferentes en las que se aplicó una simulación Monte Carlo para estimar el valor de Pi: el método de comparación de áreas, el método propuesto por Buffon y la extensión de Laplace. Los tres casos se desarrollaron en un lenguaje de alto nivel, Python y la librería Numpy que le otorgan un performance optimizado. Se estudió con detalle el resultado no determinista de las simulaciones y se demostró que cumplen con los teoremas fundamentales de la probabilidad.\cite{librobase1}
 
 \descriptores{Simulación, Monte Carlo, Pi, Buffon, Buffon-Laplace, Python, Numpy}
 
@@ -150,24 +151,8 @@ En la figura \ref{buff} se puede ver el resultado del lanzamiento de 2000 agujas
 
 
 
-\section{Epílogo}\label{epi}
-Como el lector habrá percibido durante la lectura de esta entrevista, la teoría del caos continúa siendo una de las pasiones de JY lo que le permite transmitir de manera didáctica los conceptos ligados a la misma. Es uno de los artífices de los conceptos desarrollados por el prestigioso grupo de caos de la universidad de Maryland descrito en \cite{UMD17}, y entre los que también se cuentan a Edward Ott, Celso Grebogi, Rajarshi Roy entre otros y también a colaboradores dentro de su propia institución como Eugenia Kalnay así como externos, entre los que mencionamos a Jason Gallas\footnote{Tanto Kalnay como Gallas están ligados a la RBF por ser o haber sido parte del Comité Editorial.}.
 
-\begin{acknowledgments}
-Agradezco al MPIPKS por haber posibilitado mi participación en el taller ``Multistability and Tipping: From Mathematics and Physics to Climate and Brain". A Sergio Yañez Pagans (hoy en la Universidad de Arizona) por el excelente trabajo de edición del vídeo de la entrevista y por su permanente entusiasmo en las actividades científicas. A Fernando Poma Ajoruro por haber realizado parte de la transcripción y por la permanente colaboración que brinda al Grupo de Sistemas Complejos de la UMSA.
-\end{acknowledgments}
+\bibliographystyle{plain}
+\bibliography{bibliografia.bib}
 
-\begin{thebibliography}{32}
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-
-
-\bibitem[{Wikipedia(2017)}]{WIKI17}
-Wikipedia contributors. ``James A. Yorke." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, Web. 22 Mayo 2017.
-
-
-
-
-\bibitem[{YouTube (2016)}]{YT16}
-James Yorke interview by Marcelo Ramírez, Bolivian physicist, https://www.youtube.com/watch?v=cGNMyT6NNT0, Web. 7 Diciembre 2016.
-\end{thebibliography}
 \end{document} 
