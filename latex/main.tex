@@ -70,7 +70,7 @@ El estudio matemático formal del azar se remonta hace bastantes siglos. En 1654
 
 Un matemático que realiza un interesante aporte en este aspecto es Leibniz, el cual luego de realizar la disertación titulada Dissertatio de Arte combinatoria, encuentra particular interés por ‘la certidumbre’.
 
-La probabilidad para Leibniz es un criterio objetivo de verdad. Es una lógica de lo contingente (que puede suceder o no) que se contrapone a la lógica de lo necesario. Permitiendo a la probabilidad alcanzar la verdad. El interés de Leibniz por los juegos iba más allá de la teoría de la probabilidad, sus aplicaciones podrían aplicarse al Arte de Inventar y subsecuentemente a la construcción de las características universales, temas que le parecían de mayor interés que a otros autores. (CHARLES, 1993)
+La probabilidad para Leibniz es un criterio objetivo de verdad. Es una lógica de lo contingente (que puede suceder o no) que se contrapone a la lógica de lo necesario. Permitiendo a la probabilidad alcanzar la verdad. El interés de Leibniz por los juegos iba más allá de la teoría de la probabilidad, sus aplicaciones podrían aplicarse al Arte de Inventar y subsecuentemente a la construcción de las características universales, temas que le parecían de mayor interés que a otros autores.
 \subsection{Experimentación y la teoría de probabilidad.}
 En 1777, el naturalista francés, el conde de Buffon (1707-1788) propuso el primer experimento que utilizaba un método de Monte Carlo, pues dependía de un hecho completamente aleatorio: la caída de una aguja luego de lanzarla. Las agujas son lanzadas aleatoriamente en un piso con un patrón de rayas separadas una cierta distancia. Buffon considero que los centros están uniformemente distribuidos en un piso infinito. Las agujas no ruedan a las aberturas como lo harían en la vida real, ni estas interactúan entre sí. Además, el ángulo respecto a la horizontal es considerado distribuido uniforme entre 0 y pi/2.
 
@@ -255,23 +255,25 @@ En la figura \ref{buff} se puede ver el resultado del lanzamiento de 2000 agujas
 \subsection{Método simple para la estimación de Pi}
 \subsubsection{Comprobación del limite central}
 Se consideró el lanzamiento de $10^5$ puntos, y se repitió $10^2$ veces el experimento, el resultado obtenido tiene el siguiente comportamiento al representar su histograma. 
-\begin{figure}[tbp!]
- \centering
-  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
-	\caption{Histograma del método simple para 100 repeticiones de 100000 lanzamientos.\cite{Statistics}}
- \label{buff}
-\end{figure}
+
 Al realizarse $3×10^3$ veces el experimento, se nota más claramente que el histograma del resultado obtenido tiene un comportamiento gaussiano. 
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
-	\caption{Histograma del método simple para 3000 repeticiones de 100000 lanzamientos.\cite{Statistics}}
+	\caption{Histograma del método simple para 100 repeticiones de 100000 lanzamientos.}
+ \label{buff}
+\end{figure}
+
+\begin{figure}[tbp!]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m3000.png}
+	\caption{Histograma del método simple para 3000 repeticiones de 100000 lanzamientos.}
  \label{buff}
 \end{figure}
 Se compara con realizar $3×10^3$ veces el experimento lanzando $10^6$ puntos, el comportamiento del histograma es también Gaussiano.
 \begin{figure}[tbp!]
  \centering
-  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
+  \includegraphics[width=0.4\textwidth]{figures/MCn1e6m3000.png}
 	\caption{Histograma del método simple para 3000 repeticiones de 1000000 lanzamientos.\cite{Statistics}}
  \label{buff}
 \end{figure}
@@ -282,7 +284,7 @@ En el gráfico siguiente se muestra que este comportamiento es invariante al var
 Finalmente, en la siguiente gráfica se muestra una comparativa de la discrepancia al estimar el valor de pi si consideramos distintas distribuciones de probabilidad en la generación aleatoria de puntos.
 \begin{figure}[tbp!]
  \centering
-  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
+  \includegraphics[width=0.4\textwidth]{figures/errors_uniforme.png}
 	\caption{Gráfica del error absoluto del valor de pi a medida que N crece para varias semillas.\cite{Statistics}}
  \label{buff}
 \end{figure}
@@ -294,9 +296,10 @@ Se comparan tres distribuciones
 - Uniforme
 
 - Exponencial 
+
 \begin{figure}[tbp!]
  \centering
-  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
+  \includegraphics[width=0.4\textwidth]{figures/grafica.png}
 	\caption{Error absoluto del valor de pi comparando tres distribuciones de probabilidad diferentes.\cite{Statistics}}
  \label{buff}
 \end{figure}
@@ -310,13 +313,13 @@ Es notable que para las tres distribuciones el valor de la discrepancia del valo
 Si realizamos los histogramas al estimar el valor de Pi un número grande de repeticiones, aplicando las distintas distribuciones, se demuestra que tienen un comportamiento Gaussiano en todos los casos. En la siguiente gráfica se muestran los histogramas de las distribuciones normal y exponencial. 
 \begin{figure}[tbp!]
  \centering
-  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
+  \includegraphics[width=0.4\textwidth]{figures/MCdistExp.png}
 	\caption{Histograma distribución exponencial.\cite{Statistics}}
  \label{buff}
 \end{figure}
 \begin{figure}[tbp!]
  \centering
-  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
+  \includegraphics[width=0.4\textwidth]{figures/MCdistNorm.png}
 	\caption{Histograma distribución normal.\cite{Statistics}}
  \label{buff}
 \end{figure}
@@ -340,8 +343,6 @@ En la siguiente gráfica se resume el error porcentual al estimar el valor de Pi
  \label{buff}
 \end{figure}
 En la anterior gráfica queda evidente que con el método corregido de Laplace el valor estimado de Pi converge a su valor esperado con un menor número de lanzamiento de agujas, en un factor de 10 al compararlo con el método original de Buffon. 
-\section{Epílogo}\label{epi}
-Como el lector habrá percibido durante la lectura de esta entrevista, la teoría del caos continúa siendo una de las pasiones de JY lo que le permite transmitir de manera didáctica los conceptos ligados a la misma. Es uno de los artífices de los conceptos desarrollados por el prestigioso grupo de caos de la universidad de Maryland descrito en \cite{UMD17}, y entre los que también se cuentan a Edward Ott, Celso Grebogi, Rajarshi Roy entre otros y también a colaboradores dentro de su propia institución como Eugenia Kalnay así como externos, entre los que mencionamos a Jason Gallas\footnote{Tanto Kalnay como Gallas están ligados a la RBF por ser o haber sido parte del Comité Editorial.}.
 
 \begin{acknowledgments}
 Agradezco al MPIPKS por haber posibilitado mi participación en el taller ``Multistability and Tipping: From Mathematics and Physics to Climate and Brain". A Sergio Yañez Pagans (hoy en la Universidad de Arizona) por el excelente trabajo de edición del vídeo de la entrevista y por su permanente entusiasmo en las actividades científicas. A Fernando Poma Ajoruro por haber realizado parte de la transcripción y por la permanente colaboración que brinda al Grupo de Sistemas Complejos de la UMSA.
