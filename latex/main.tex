@@ -238,9 +238,6 @@ Para esta propuesta del lanzamiento de agujas para la estimación de Pi, se comp
 -Problema Buffon, cuando las agujas cruzan líneas en un solo eje.
 -Problema Buffon-Laplace, cuando las agujas cruzan líneas en sentido vertical y horizontal.
 
-
-
-
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/buffon.jpg}
@@ -254,10 +251,8 @@ En la figura \ref{buff} se puede ver el resultado del lanzamiento de 2000 agujas
 \section{Análisis de resultados}
 \subsection{Método simple para la estimación de Pi}
 \subsubsection{Comprobación del limite central}
-Se consideró el lanzamiento de $10^5$ puntos, y se repitió $10^2$ veces el experimento, el resultado obtenido tiene el siguiente comportamiento al representar su histograma. 
-
-Al realizarse $3×10^3$ veces el experimento, se nota más claramente que el histograma del resultado obtenido tiene un comportamiento gaussiano. 
-\begin{figure}[tbp!]
+Se consideró el lanzamiento de $10^5$ puntos, y se repitió $10^2$ veces el experimento, el resultado obtenido tiene el siguiente comportamiento al representar su histograma. Al realizarse $3 10^3$ veces el experimento, se nota más claramente que el histograma del resultado obtenido tiene un comportamiento gaussiano. 
+\begin{figure}
  \centering
   \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
 	\caption{Histograma del método simple para 100 repeticiones de 100000 lanzamientos.}
@@ -274,7 +269,7 @@ Se compara con realizar $3×10^3$ veces el experimento lanzando $10^6$ puntos, e
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/MCn1e6m3000.png}
-	\caption{Histograma del método simple para 3000 repeticiones de 1000000 lanzamientos.\cite{Statistics}}
+	\caption{Histograma del método simple para 3000 repeticiones de 1000000 lanzamientos.}
  \label{buff}
 \end{figure}
 El valor de σ es menor cuando consideramos $10^6$ ($\sigma$=0.00162) en comparación con $10^5$ ($\sigma$=0.00473). 
@@ -285,7 +280,7 @@ Finalmente, en la siguiente gráfica se muestra una comparativa de la discrepanc
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/errors_uniforme.png}
-	\caption{Gráfica del error absoluto del valor de pi a medida que N crece para varias semillas.\cite{Statistics}}
+	\caption{Gráfica del error absoluto del valor de pi a medida que N crece para varias semillas.}
  \label{buff}
 \end{figure}
 
@@ -300,13 +295,13 @@ Se comparan tres distribuciones
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/grafica.png}
-	\caption{Error absoluto del valor de pi comparando tres distribuciones de probabilidad diferentes.\cite{Statistics}}
+	\caption{Error absoluto del valor de pi comparando tres distribuciones de probabilidad diferentes.}
  \label{buff}
 \end{figure}
 Es notable que para las tres distribuciones el valor de la discrepancia del valor estimado de Pi converge a un valor mientras mayor número de lanzamientos se utilice en la prueba. Al aplicar una distribución normal con μ=0.27 y  σ=0.5 el valor estimado de pi es cercano que cuando se aplica una distribución uniforme. Al aplicar una distribución exponencial con un parámetro λ=0.42, el valor estimado de Pi converge con un error de más del 0.5. Esto se debe a que los lanzamientos de las agujas tienen mayor probabilidad de caer en cierta posición y ángulo, lo que puede equivaler de manera experimental a por ejemplo que las agujas tengan otra conformación física, como en la siguiente imagen.
 \begin{figure}[tbp!]
  \centering
-  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
+  \includegraphics[width=0.4\textwidth]{figures/aguja.png}
 	\caption{Imagen de una aguja.\cite{Statistics}}
  \label{buff}
 \end{figure}
@@ -314,13 +309,13 @@ Si realizamos los histogramas al estimar el valor de Pi un número grande de rep
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/MCdistExp.png}
-	\caption{Histograma distribución exponencial.\cite{Statistics}}
+	\caption{Histograma distribución exponencial.}
  \label{buff}
 \end{figure}
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/MCdistNorm.png}
-	\caption{Histograma distribución normal.\cite{Statistics}}
+	\caption{Histograma distribución normal}
  \label{buff}
 \end{figure}
 \subsection{Método de Buffon para la estimación de Pi}
@@ -330,23 +325,19 @@ Se consideró el lanzamiento aleatorio de 100 agujas, con una distribución unif
 Mostrando que para ambos casos el histograma de las estimaciones de Pi para ambos métodos presenta un comportamiento Gaussiano, demostrando la validez del teorema del límite central.
 \begin{figure}[tbp!]
  \centering
-  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
-	\caption{Comparación histogramas.\cite{Statistics}}
+  \includegraphics[width=0.4\textwidth]{figures/pi_N1.000e+02k200.jpg}
+	\caption{Comparación histogramas.}
  \label{buff}
 \end{figure}
 \subsubsection{Comprobación del teorema de los números grandes.}
 En la siguiente gráfica se resume el error porcentual al estimar el valor de Pi vs. el números de lanzamiento de agujas para ambos métodos. El error converge a cero a partir del lanzamiento de $10^6$ agujas.
 \begin{figure}[tbp!]
  \centering
-  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
-	\caption{Puntos de errores\cite{Statistics}}
+  \includegraphics[width=0.4\textwidth]{figures/Errores.jpg}
+	\caption{Puntos de errores}
  \label{buff}
 \end{figure}
 En la anterior gráfica queda evidente que con el método corregido de Laplace el valor estimado de Pi converge a su valor esperado con un menor número de lanzamiento de agujas, en un factor de 10 al compararlo con el método original de Buffon. 
-
-\begin{acknowledgments}
-Agradezco al MPIPKS por haber posibilitado mi participación en el taller ``Multistability and Tipping: From Mathematics and Physics to Climate and Brain". A Sergio Yañez Pagans (hoy en la Universidad de Arizona) por el excelente trabajo de edición del vídeo de la entrevista y por su permanente entusiasmo en las actividades científicas. A Fernando Poma Ajoruro por haber realizado parte de la transcripción y por la permanente colaboración que brinda al Grupo de Sistemas Complejos de la UMSA.
-\end{acknowledgments}
 
 \begin{thebibliography}{32}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
