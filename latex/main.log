@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.12.7)  8 JAN 2021 16:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.12.7)  8 JAN 2021 16:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -278,7 +278,7 @@ See the natbib package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.32 ...mand\NAT@force@numbers{}\NAT@force@numbers
+l.33 ...mand\NAT@force@numbers{}\NAT@force@numbers
                                                   
 ? 
 
@@ -401,15 +401,35 @@ Underfull \hbox (badness 3179) in paragraph at lines 56--66
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 75.
+Underfull \hbox (badness 1406) in paragraph at lines 68--69
+[]\OT1/pnc/m/n/10 El es-tu-dio matem[]atico for-mal del azar se re-
+ []
 
-Underfull \hbox (badness 1389) in paragraph at lines 75--76
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 78.
+
+Underfull \hbox (badness 2856) in paragraph at lines 102--104
+[]\OT1/pnc/m/n/10 Tomamos la vari-able aleato-ria de in-ter[]es, el
+ []
+
+[2]
+Underfull \hbox (badness 1596) in paragraph at lines 157--158
+\OT1/pnc/m/n/10 tales que $\OMS/cmsy/m/n/10 8[]$ \OT1/pnc/m/n/10 ten-gan el se-
+gundo mo-mento finito
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 160--162
+\OT1/pnc/m/n/10 Tiene aprox-i-mada-mente una dis-tribuci[]on nor-mal
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 176--177
 \OT1/pnc/m/n/10 de-ter-min[]^^Psticos (como por ejem-plo el m[]etodo de
  []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 83--85
+Underfull \hbox (badness 1635) in paragraph at lines 184--186
 []\OT1/pnc/m/n/10 Siendo Python un lenguaje de alto nivel que
  []
 
@@ -421,137 +441,194 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ... la generación de números: $2^{19937}−
+l.192 ...la generación de números: $2^{19937}−
                                                   1$\cite{Makoto}.
 ? 
 
-Underfull \hbox (badness 1033) in paragraph at lines 90--92
+Underfull \hbox (badness 1033) in paragraph at lines 191--193
 \OT1/pnc/m/n/10 semilla (seed) que es un valor con-ce-dido por el
  []
 
 ! Too many }'s.
-l.103 \end{equation}}
+l.204 \end{equation}}
                      
 ? 
-<figures/areas.jpg, id=8, 361.35pt x 341.8371pt>
+<figures/areas.jpg, id=18, 361.35pt x 341.8371pt>
 File: figures/areas.jpg Graphic file (type jpg)
 <use figures/areas.jpg>
-Package pdftex.def Info: figures/areas.jpg  used on input line 110.
+Package pdftex.def Info: figures/areas.jpg  used on input line 211.
 (pdftex.def)             Requested size: 199.16624pt x 188.4126pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
+Underfull \hbox (badness 10000) in paragraph at lines 212--212
 $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
+Underfull \hbox (badness 10000) in paragraph at lines 212--212
 
  []
 
 
-! Package inputenc Error: Unicode character 𝑥 (U+1D465)
+! Package inputenc Error: Unicode character � (U+FFFD)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.120 ...ae aleatoriamente con un centro en $(𝑥
-                                                  _𝑖,𝑦_𝑖)$, tiene r...
+l.221 ...cae aleatoriamente con un centro en $(�
+                                                  �_��,��_��)$...
+
+? 
+
+! Package inputenc Error: Unicode character � (U+FFFD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221 ... aleatoriamente con un centro en $(��
+                                                  _��,��_��)$, t...
 
 ? 
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.120 ...eatoriamente con un centro en $(𝑥_𝑖
-                                                  ,𝑦_𝑖)$, tiene relaci...
+l.221 ...atoriamente con un centro en $(��_�
+                                                  �,��_��)$, tiene...
 
 ? 
 
-! Package inputenc Error: Unicode character 𝑖 (U+1D456)
+! Package inputenc Error: Unicode character � (U+FFFD)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.120 ...eatoriamente con un centro en $(𝑥_𝑖
-                                                  ,𝑦_𝑖)$, tiene relaci...
+l.221 ...atoriamente con un centro en $(��_�
+                                                  �,��_��)$, tiene...
 
 ? 
 
-! Package inputenc Error: Unicode character 𝑦 (U+1D466)
+! Package inputenc Error: Unicode character � (U+FFFD)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.120 ...iamente con un centro en $(𝑥_𝑖,𝑦
-                                                  _𝑖)$, tiene relacionada...
+l.221 ...riamente con un centro en $(��_��
+                                                  ,��_��)$, tiene re...
+
+? 
+
+! Package inputenc Error: Unicode character � (U+FFFD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221 ...ente con un centro en $(��_��,�
+                                                  �_��)$, tiene relaci...
+
+? 
+
+! Package inputenc Error: Unicode character � (U+FFFD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221 ...e con un centro en $(��_��,��
+                                                  _��)$, tiene relaciona...
 
 ? 
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.120 ...te con un centro en $(𝑥_𝑖,𝑦_𝑖
-                                                  )$, tiene relacionada otra...
+l.221 ...n un centro en $(��_��,��_�
+                                                  �)$, tiene relacionada o...
 
 ? 
 
-! Package inputenc Error: Unicode character 𝑖 (U+1D456)
+! Package inputenc Error: Unicode character � (U+FFFD)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.120 ...te con un centro en $(𝑥_𝑖,𝑦_𝑖
+l.221 ...n un centro en $(��_��,��_�
+                                                  �)$, tiene relacionada o...
+
+? 
+
+! Package inputenc Error: Unicode character � (U+FFFD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221 ...n centro en $(��_��,��_��
                                                   )$, tiene relacionada otra...
 
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.120 ... con un centro en $(𝑥_𝑖,𝑦_𝑖)$
+l.221 ...centro en $(��_��,��_��)$
                                                   , tiene relacionada otra v...
 
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.120 ... con un centro en $(𝑥_𝑖,𝑦_𝑖)$
+l.221 ...centro en $(��_��,��_��)$
                                                   , tiene relacionada otra v...
 
 ? 
-<figures/agujas.jpg, id=9, 416.84303pt x 169.49036pt>
+[3]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 222.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 222.
+
+
+Class revtex4 Warning: Deferred float stuck during \clearpage processing.
+
+<figures/agujas.jpg, id=23, 416.84303pt x 169.49036pt>
 File: figures/agujas.jpg Graphic file (type jpg)
 <use figures/agujas.jpg>
-Package pdftex.def Info: figures/agujas.jpg  used on input line 126.
+Package pdftex.def Info: figures/agujas.jpg  used on input line 227.
 (pdftex.def)             Requested size: 199.16624pt x 80.9846pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--127
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--127
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 
  []
 
-[2 <./figures/areas.jpg> <./figures/agujas.jpg>]
-<figures/buffon.jpg, id=19, 268.00125pt x 292.09125pt>
+<figures/buffon.jpg, id=24, 268.00125pt x 292.09125pt>
 File: figures/buffon.jpg Graphic file (type jpg)
 <use figures/buffon.jpg>
-Package pdftex.def Info: figures/buffon.jpg  used on input line 144.
+Package pdftex.def Info: figures/buffon.jpg  used on input line 245.
 (pdftex.def)             Requested size: 199.16624pt x 217.06671pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
 $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
 
  []
 
@@ -567,31 +644,34 @@ Underfull \hbox (badness 1259) in paragraph at lines 32--36
 19-01-28-how-
  []
 
-) [3 <./figures/buffon.jpg>] (./main.aux)
+) [4 <./figures/areas.jpg> <./figures/agujas.jpg> <./figures/buffon.jpg>]
+(./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5118 strings out of 480906
- 66853 string characters out of 5910772
- 325870 words of memory out of 5000000
- 20586 multiletter control sequences out of 15000+600000
+ 5117 strings out of 480906
+ 66845 string characters out of 5910772
+ 330885 words of memory out of 5000000
+ 20585 multiletter control sequences out of 15000+600000
  562379 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,6n,38p,808b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8
-a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb>
-Output written on main.pdf (3 pages, 536286 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb>
+Output written on main.pdf (4 pages, 567315 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
