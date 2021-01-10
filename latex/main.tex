@@ -22,7 +22,7 @@
 \author{Carlos CCC \marca{**}}
 \afil{Sensei 2 Dojo Cobra Py, https://github.com/CobraPython}%
 
-\alpie{**}{ccc@gmail.com}% Las lineas se cortan automaticamente o puede obligarse esto con
+\alpie{**}{ccruz.carloscruz@gmail.com}% Las lineas se cortan automaticamente o puede obligarse esto con
 
 \begin{abstract}
 \Resumen
@@ -43,7 +43,7 @@ This article represents the result of three different metodologies for estimate 
 %   INTRODUCCION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introducción}\label{intro}
+\section{Introducción}
 El método de Monte Carlo tiene un génesis moderno en el trabajo pionero de Stan Ulam y John Von Neumann. Luego de la segunda Guerra Mundial aplicaron distintos métodos de Monte Carlo en simulaciones para el desarrollo de armas termonucleares. Desde entonces y por más de 50 años que se aplicaron estos desarrollos en la investigación y perfeccionamiento de distintos métodos que modelan el transporte de neutrones y radiación gamma con bastante éxito experimental\cite{Kling}. 
 
 Hoy resulta una alegre ironía que ningún producto que haya aplicado la metodología Monte Carlo en su desarrollo, se haya empleado en conflicto alguno. Más aún los científicos han explotado el uso de simulaciones Monte Carlo para obtener un beneficio público positivo aplicándola en salud. Por ejemplo, los planeamientos de dosis en radioterapia dependen actualmente en algún grado de cálculos obtenidos mediante simulaciones que emplean Monte Carlo.
@@ -63,13 +63,15 @@ analítico no es posible, o en problemas que
 contienen demasiada complejidad (como es el
 caso de la ecuación de transporte de Boltzmann
 para partículas sin carga).\cite{Kling}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   marco teorico
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Marco Teorico}\label{inter}
 El estudio matemático formal del azar se remonta hace bastantes siglos. En 1654 motivados por dos problemas propuestos por Antoine Gombaud (le Chevalier de Méré), basados en las observaciones de los juegos de azar de la época, es que se reúnen a resolver el desafío matemático personalidades como Pascal, Cardano y Fermat entre otros dando inicio a la teoría clásica de la probabilidad. Es en este periodo que distintos matemáticos advierten la relación de la teoría combinatoria y la incipiente teoría de la probabilidad.
 
 Un matemático que realiza un interesante aporte en este aspecto es Leibniz, el cual luego de realizar la disertación titulada Dissertatio de Arte combinatoria, encuentra particular interés por ‘la certidumbre’.
 
-La probabilidad para Leibniz es un criterio objetivo de verdad. Es una lógica de lo contingente (que puede suceder o no) que se contrapone a la lógica de lo necesario. Permitiendo a la probabilidad alcanzar la verdad. El interés de Leibniz por los juegos iba más allá de la teoría de la probabilidad, sus aplicaciones podrían aplicarse al Arte de Inventar y subsecuentemente a la construcción de las características universales, temas que le parecían de mayor interés que a otros autores. (CHARLES, 1993)
+La probabilidad para Leibniz es un criterio objetivo de verdad. Es una lógica de lo contingente (que puede suceder o no) que se contrapone a la lógica de lo necesario. Permitiendo a la probabilidad alcanzar la verdad. El interés de Leibniz por los juegos iba más allá de la teoría de la probabilidad, sus aplicaciones podrían aplicarse al Arte de Inventar y subsecuentemente a la construcción de las características universales, temas que le parecían de mayor interés que a otros autores.\cite{Charles}
 \subsection{Experimentación y la teoría de probabilidad.}
 En 1777, el naturalista francés, el conde de Buffon (1707-1788) propuso el primer experimento que utilizaba un método de Monte Carlo, pues dependía de un hecho completamente aleatorio: la caída de una aguja luego de lanzarla. Las agujas son lanzadas aleatoriamente en un piso con un patrón de rayas separadas una cierta distancia. Buffon considero que los centros están uniformemente distribuidos en un piso infinito. Las agujas no ruedan a las aberturas como lo harían en la vida real, ni estas interactúan entre sí. Además, el ángulo respecto a la horizontal es considerado distribuido uniforme entre 0 y pi/2.
 
@@ -237,9 +239,6 @@ Para esta propuesta del lanzamiento de agujas para la estimación de Pi, se comp
 -Problema Buffon, cuando las agujas cruzan líneas en un solo eje.
 -Problema Buffon-Laplace, cuando las agujas cruzan líneas en sentido vertical y horizontal.
 
-
-
-
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/buffon.jpg}
@@ -250,10 +249,102 @@ Para esta propuesta del lanzamiento de agujas para la estimación de Pi, se comp
 
 En la figura \ref{buff} se puede ver el resultado del lanzamiento de 2000 agujas de largo $a$ de la misma longitud que la separación de las lineas $b$, es decir que $a=b$. La probabilidad se calcula en relación a cuantas agujas cruzan una línea sobre el total de agujas. 
 
+\section{Análisis de resultados}
+\subsection{Método simple para la estimación de Pi}
+\subsubsection{Comprobación del limite central}
+Se consideró el lanzamiento de $10^5$ puntos, y se repitió $10^2$ veces el experimento, el resultado obtenido tiene el siguiente comportamiento al representar su histograma. Al realizarse $3 10^3$ veces el experimento, se nota más claramente que el histograma del resultado obtenido tiene un comportamiento gaussiano. 
+\begin{figure}
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m100.png}
+	\caption{Histograma del método simple para 100 repeticiones de 100000 lanzamientos.}
+ \label{buff}
+\end{figure}
+
+\begin{figure}[tbp!]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/MCn1e5m3000.png}
+	\caption{Histograma del método simple para 3000 repeticiones de 100000 lanzamientos.}
+ \label{buff}
+\end{figure}
+Se compara con realizar $3×10^3$ veces el experimento lanzando $10^6$ puntos, el comportamiento del histograma es también Gaussiano.
+\begin{figure}[tbp!]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/MCn1e6m3000.png}
+	\caption{Histograma del método simple para 3000 repeticiones de 1000000 lanzamientos.}
+ \label{buff}
+\end{figure}
+El valor de σ es menor cuando consideramos $10^6$ ($\sigma$=0.00162) en comparación con $10^5$ ($\sigma$=0.00473). 
+\subsubsection{Comprobación del teorema de números grandes.}
+Se ha estimado el valor de Pi para distintas cantidades de puntos generados. En la siguiente gráfica se muestra la congruencia de Pi con el valor más preciso que tiene la librería. Se muestra que mientras mayor es el N tomado para estimar el valor de Pi, su error absoluto converge a cero.
+En el gráfico siguiente se muestra que este comportamiento es invariante al variar las semillas en la generación de los números pseudoaleatorios.
+Finalmente, en la siguiente gráfica se muestra una comparativa de la discrepancia al estimar el valor de pi si consideramos distintas distribuciones de probabilidad en la generación aleatoria de puntos.
+\begin{figure}[tbp!]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/errors_uniforme.png}
+	\caption{Gráfica del error absoluto del valor de pi a medida que N crece para varias semillas.}
+ \label{buff}
+\end{figure}
+
+Se comparan tres distribuciones
+
+- Normal
+
+- Uniforme
+
+- Exponencial 
 
 
+\begin{figure}[tbp!]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/grafica.png}
+	\caption{Error absoluto del valor de pi comparando tres distribuciones de probabilidad diferentes.}
+ \label{buff}
+\end{figure}
+Es notable que para las tres distribuciones el valor de la discrepancia del valor estimado de Pi converge a un valor mientras mayor número de lanzamientos se utilice en la prueba. Al aplicar una distribución normal con μ=0.27 y  σ=0.5 el valor estimado de pi es cercano que cuando se aplica una distribución uniforme. Al aplicar una distribución exponencial con un parámetro λ=0.42, el valor estimado de Pi converge con un error de más del 0.5. Esto se debe a que los lanzamientos de las agujas tienen mayor probabilidad de caer en cierta posición y ángulo, lo que puede equivaler de manera experimental a por ejemplo que las agujas tengan otra conformación física, como en la siguiente imagen.
+\begin{figure}[tbp!]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/aguja.png}
+	\caption{Imagen de una aguja.\cite{Statistics}}
+ \label{buff}
+\end{figure}
+Si realizamos los histogramas al estimar el valor de Pi un número grande de repeticiones, aplicando las distintas distribuciones, se demuestra que tienen un comportamiento Gaussiano en todos los casos. En la siguiente gráfica se muestran los histogramas de las distribuciones normal y exponencial. 
+\begin{figure}[tbp!]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/MCdistExp.png}
+	\caption{Histograma distribución exponencial.}
+ \label{buff}
+\end{figure}
+\begin{figure}[tbp!]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/MCdistNorm.png}
+	\caption{Histograma distribución normal}
+ \label{buff}
+\end{figure}
+\subsection{Método de Buffon para la estimación de Pi}
+\subsubsection{Comprobación del teorema del límite central.}
+Se consideró el lanzamiento aleatorio de 100 agujas, con una distribución uniforme para la posición y ángulo, repitiendo el experimento 200 veces para ambos casos; Buffon y la extensión de Laplace.
+
+Mostrando que para ambos casos el histograma de las estimaciones de Pi para ambos métodos presenta un comportamiento Gaussiano, demostrando la validez del teorema del límite central.
+\begin{figure}[tbp!]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/pi_N1.000e+02k200.jpg}
+	\caption{Comparación histogramas.}
+ \label{buff}
+\end{figure}
+\subsubsection{Comprobación del teorema de los números grandes.}
+En la siguiente gráfica se resume el error porcentual al estimar el valor de Pi vs. el números de lanzamiento de agujas para ambos métodos. El error converge a cero a partir del lanzamiento de $10^6$ agujas.
+\begin{figure}[tbp!]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/Errores.jpg}
+	\caption{Puntos de errores}
+ \label{buff}
+\end{figure}
+En la anterior gráfica queda evidente que con el método corregido de Laplace el valor estimado de Pi converge a su valor esperado con un menor número de lanzamiento de agujas, en un factor de 10 al compararlo con el método original de Buffon. 
+
+\begin{thebibliography}{32}
 
 \bibliographystyle{plain}
 \bibliography{bibliografia.bib}
+
 
 \end{document} 
