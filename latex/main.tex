@@ -7,7 +7,7 @@
 \usepackage{natbib}
 \usepackage[utf8]{inputenc}
 %\usepackage[latin1]{inputenc}
-
+\usepackage{cite}
 
 \begin{document}
 
@@ -65,7 +65,7 @@ para partículas sin carga).\cite{Kling}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   marco teorico
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Marco Teorico}\label{inter}
+\section{Marco Teórico}\label{inter}
 El estudio matemático formal del azar se remonta hace bastantes siglos. En 1654 motivados por dos problemas propuestos por Antoine Gombaud (le Chevalier de Méré), basados en las observaciones de los juegos de azar de la época, es que se reúnen a resolver el desafío matemático personalidades como Pascal, Cardano y Fermat entre otros dando inicio a la teoría clásica de la probabilidad. Es en este periodo que distintos matemáticos advierten la relación de la teoría combinatoria y la incipiente teoría de la probabilidad.
 
 Un matemático que realiza un interesante aporte en este aspecto es Leibniz, el cual luego de realizar la disertación titulada Dissertatio de Arte combinatoria, encuentra particular interés por ‘la certidumbre’.
@@ -339,16 +339,16 @@ En la siguiente gráfica se resume el error porcentual al estimar el valor de Pi
 \end{figure}
 En la anterior gráfica queda evidente que con el método corregido de Laplace el valor estimado de Pi converge a su valor esperado con un menor número de lanzamiento de agujas, en un factor de 10 al compararlo con el método original de Buffon. 
 
-\begin{thebibliography}{32}
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\section{Conclusiones}
+
+En esta experiencia se mostraron tres distintos métodos que aplican Monte Carlo para estimar el valor de Pi: el método simple por comparación de áreas, el método propuesto por Buffon mediante el lanzamiento de agujas y el método de Buffon ampliado por Laplace. \\
+Se demostró que los resultados obtenidos mediante una simulación Monte Carlo tienen un carácter no determinista que cumplen con los teoremas centrales de la teoría de la probabilidad. \\
+
+Finalmente, se mostró que se puede lograr simulaciones con un alto costo computacional aplicando un lenguaje de alto nivel como Python y la librería Numpy, lo que permite tener un código simple y legible.
 
 
-\bibitem[{Wikipedia(2017)}]{WIKI17}
-Wikipedia contributors. ``James A. Yorke." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, Web. 22 Mayo 2017.
+\bibliographystyle{plain}
+\bibliography{bibliografia.bib}                                                                     
 
-
-
-\bibitem[{YouTube (2016)}]{YT16}
-James Yorke interview by Marcelo Ramírez, Bolivian physicist, https://www.youtube.com/watch?v=cGNMyT6NNT0, Web. 7 Diciembre 2016.
-\end{thebibliography}
 \end{document} 
