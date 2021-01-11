@@ -66,6 +66,8 @@ para partículas sin carga).\cite{Kling}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   marco teorico
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
 \section{Marco Teórico}\label{inter}
 El estudio matemático formal del azar se remonta hace bastantes siglos. En 1654 motivados por dos problemas propuestos por Antoine Gombaud (le Chevalier de Méré), basados en las observaciones de los juegos de azar de la época, es que se reúnen a resolver el desafío matemático personalidades como Pascal, Cardano y Fermat entre otros dando inicio a la teoría clásica de la probabilidad. Es en este periodo que distintos matemáticos advierten la relación de la teoría combinatoria y la incipiente teoría de la probabilidad.
 
@@ -96,7 +98,7 @@ Durante el siglo XX con el advenimiento de las nuevas tecnologías es que el mé
 Sea $X_1,..., X_n$ una sucesión de variables aleatorias, diremos que la sucesión de ${X_n}$ converge en probabilidad a X (que es otra variable aleatoria) si solo si para todo $\forall \varepsilon >0$:
 
 \begin{equation}
-    \lim_{x \to \infty}(P[(X_n - X)>\varepsilon]=0)
+   \displaystyle \lim_{x \to \infty}(P[(X_n - X)>\varepsilon]=0)
 \end{equation}
 
 Siendo conocida esta expresión como criterio de convergencia débil. 
@@ -107,7 +109,7 @@ $\overline{x}=\frac{1}{n}\sum X_i$
 Aplicando el operador lineal Esperanza:
 
 \begin{equation}
-    E(\overline{X_n}=E(\frac{1}{n} \sum X_i))
+  \displaystyle  E(\overline{X_n}=E(\frac{1}{n} \sum X_i))
 \end{equation}
 \begin{equation}
     E(\overline{X_n}=\frac{1}{n} \sum E(X_i))
@@ -348,11 +350,16 @@ En esta experiencia se mostraron tres distintos métodos que aplican Monte Carlo
 Se demostró que los resultados obtenidos mediante una simulación Monte Carlo tienen un carácter no determinista que cumplen con los teoremas centrales de la teoría de la probabilidad. \\
 
 Finalmente, se mostró que se puede lograr simulaciones con un alto costo computacional aplicando un lenguaje de alto nivel como Python y la librería Numpy, lo que permite tener un código simple y legible.
-\begin{figure*}[tbf]
+
+\newpage
+
+
+\begin{figure}[tp]
   \includegraphics[scale=0.5]{figures/errors_uniforme.png}
 	\caption{Error absoluto del valor de pi a medida que N crece. Se observa que independientemente de la semilla, representada por colores, el valor converge a 0.}
  \label{buff4}
-\end{figure*}
+\end{figure}
+
 
 \bibliographystyle{alpha}
 \bibliography{bibliografia.bib}                                                                     
