@@ -44,13 +44,13 @@ This article represents the result of three different metodologies for estimate 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introducción}
-El método de Monte Carlo tiene un génesis moderno en el trabajo pionero de Stan Ulam y John Von Neumann. Luego de la segunda Guerra Mundial aplicaron distintos métodos de Monte Carlo en simulaciones para el desarrollo de armas termonucleares. Desde entonces y por más de 50 años que se aplicaron estos desarrollos en la investigación y perfeccionamiento de distintos métodos que modelan el transporte de neutrones y radiación gamma con bastante éxito experimental\cite{Kling}. 
+El método de Monte Carlo tiene un génesis moderno en el trabajo pionero de Stan Ulam y John Von Neumann. Luego de la segunda Guerra Mundial aplicaron distintos métodos de Monte Carlo en simulaciones para el desarrollo de armas termonucleares. Desde entonces y por más de 50 años que se aplicaron estos desarrollos en la investigación y perfeccionamiento de distintos métodos que modelan el transporte de neutrones y radiación gamma con bastante éxito experimental como menciona \cite{biela}. 
 
 Hoy resulta una alegre ironía que ningún producto que haya aplicado la metodología Monte Carlo en su desarrollo, se haya empleado en conflicto alguno. Más aún los científicos han explotado el uso de simulaciones Monte Carlo para obtener un beneficio público positivo aplicándola en salud. Por ejemplo, los planeamientos de dosis en radioterapia dependen actualmente en algún grado de cálculos obtenidos mediante simulaciones que emplean Monte Carlo.
 
 
 El método de Monte Carlo es un método de resolución numérica donde se modelan las relaciones e interacciones de distintos objetos y su entorno, mediante la generación aleatoria de estas interacciones. Mientras mayor sea la repetición de pruebas se obtiene un resultado que va convergiendo a un valor con mayor precisión. Es por el recurso de la aleatoriedad que obtiene el nombre Monte Carlo, pues se inspira en la región del Principado de Mónaco donde se encuentran el casino Monte Carlo.
-Un método Monte Carlo se puede definir de la siguiente forma: <<Los métodos Monte Carlo son aquéllos en los que las propiedades de las distribuciones de las variables aleatorias son investigadas mediante la simulación de números aleatorios. Estos métodos, dejando a un lado el origen de los datos, son similares a los métodos estadísticos habituales en los cuales las muestras aleatorias se utilizan para realizar inferencias acerca de las poblaciones origen. Generalmente, en su aplicación estadística se utiliza un modelo para simular un fenómeno que contiene algún componente aleatorio. En los métodos Monte Carlo, por otro lado, el objeto de la investigación es un modelo en sí mismo, y se utilizan sucesos aleatorios o pseudoaleatorios para estudiarlo.>>\cite{Gentle}
+Un método Monte Carlo se puede definir de la siguiente forma: <<Los métodos Monte Carlo son aquéllos en los que las propiedades de las distribuciones de las variables aleatorias son investigadas mediante la simulación de números aleatorios. Estos métodos, dejando a un lado el origen de los datos, son similares a los métodos estadísticos habituales en los cuales las muestras aleatorias se utilizan para realizar inferencias acerca de las poblaciones origen. Generalmente, en su aplicación estadística se utiliza un modelo para simular un fenómeno que contiene algún componente aleatorio. En los métodos Monte Carlo, por otro lado, el objeto de la investigación es un modelo en sí mismo, y se utilizan sucesos aleatorios o pseudoaleatorios para estudiarlo.\cite{gent}
 
 
 El método cobra una especial relevancia las
@@ -62,7 +62,7 @@ en problemas donde obtener un resultado
 analítico no es posible, o en problemas que
 contienen demasiada complejidad (como es el
 caso de la ecuación de transporte de Boltzmann
-para partículas sin carga).\cite{Kling}
+para partículas sin carga).\cite{biela}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   marco teorico
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,7 +73,7 @@ El estudio matemático formal del azar se remonta hace bastantes siglos. En 1654
 
 Un matemático que realiza un interesante aporte en este aspecto es Leibniz, el cual luego de realizar la disertación titulada Dissertatio de Arte combinatoria, encuentra particular interés por ‘la certidumbre’.
 
-La probabilidad para Leibniz es un criterio objetivo de verdad. Es una lógica de lo contingente (que puede suceder o no) que se contrapone a la lógica de lo necesario. Permitiendo a la probabilidad alcanzar la verdad. El interés de Leibniz por los juegos iba más allá de la teoría de la probabilidad, sus aplicaciones podrían aplicarse al Arte de Inventar y subsecuentemente a la construcción de las características universales, temas que le parecían de mayor interés que a otros autores.\cite{Charles}
+La probabilidad para Leibniz es un criterio objetivo de verdad. Es una lógica de lo contingente (que puede suceder o no) que se contrapone a la lógica de lo necesario. Permitiendo a la probabilidad alcanzar la verdad. El interés de Leibniz por los juegos iba más allá de la teoría de la probabilidad, sus aplicaciones podrían aplicarse al Arte de Inventar y subsecuentemente a la construcción de las características universales, temas que le parecían de mayor interés que a otros autores.\cite{charles}
 \subsection{Experimentación y la teoría de probabilidad.}
 En 1777, el naturalista francés, el conde de Buffon $(1707-1788)$ propuso el primer experimento que utilizaba un método de Monte Carlo, pues dependía de un hecho completamente aleatorio: la caída de una aguja luego de lanzarla. Las agujas son lanzadas aleatoriamente en un piso con un patrón de rayas separadas una cierta distancia. Buffon considero que los centros están uniformemente distribuidos en un piso infinito. Las agujas no ruedan a las aberturas como lo harían en la vida real, ni estas interactúan entre sí. Además, el ángulo respecto a la horizontal es considerado distribuido uniforme entre 0 y $\pi$/2.
 
@@ -196,7 +196,7 @@ https://github.com/CobraPython/montecarlopi
 \subsection{Generación de números pseudeoaleatorios}
 
 Existen distintos métodos para la generación de números aleatorios, sin embargo, la generación de estos en ordenador parte necesariamente desde una semilla (seed) que es un valor concedido por el usuario. Con esta semilla se genera una única serie de números aleatorios, pudiendo ser replicados a partir de esta. Por esta razón es que se denominan números pseudo aleatorios.
-La librería Numpy utiliza el algoritmo Mersenne Twistter\cite{Tanguy} (MT19937) para la generación de números pseudoaleatorios. Este método particular tiene la cualidad de tener una periodicidad bastante grande en la generación de números: $2^19937-1$\cite{Makoto}.
+La librería Numpy utiliza el algoritmo Mersenne Twistter\cite{tan} (MT19937) para la generación de números pseudoaleatorios. Este método particular tiene la cualidad de tener una periodicidad bastante grande en la generación de números: $2^19937-1$\cite{mako}.
 
 \subsection{Métodos de estimación de $\pi$}
 \subsubsection{Método Simple para la estimación de $\pi$}
@@ -232,13 +232,13 @@ En el caso de la estimación de $\pi$ usando la propuesta experimental de Buffon
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/agujas.jpg}
-	\caption{Las agujas caen en una posición y ángulo aleatorio. Dependiendo de este ángulo se puede determinar si la aguja cruza una línea.\cite{Statistics}}
+	\caption{Las agujas caen en una posición y ángulo aleatorio. Dependiendo de este ángulo se puede determinar si la aguja cruza una línea.\cite{krauth}}
  \label{aguja}
 \end{figure}
 
 Si bien en este caso se recurre a una función trigonométrica para evaluar la inclinación y considerar a las agujas que cruzan la línea, el ordenador usa recursivamente el valor de $\pi$ para calcular la función coseno, siendo este un error “histórico” ya que recurre al valor de $\pi$ para calcular al mismo. Por esta razón se usó una corrección geométrica que evita el uso de funciones trigonométricas.
 
-Pasando de requerir generar aleatoriamente un ángulo $\theta$, a generar aleatoriamente desplazamientos $\delta x$,$\delta y$. En la siguiente figura se muestra una representación gráfica de cómo se realiza la simulación con un número grande de lanzamientos aleatorios con distribución uniforme. \cite{Statistics}
+Pasando de requerir generar aleatoriamente un ángulo $\theta$, a generar aleatoriamente desplazamientos $\delta x$,$\delta y$. En la siguiente figura se muestra una representación gráfica de cómo se realiza la simulación con un número grande de lanzamientos aleatorios con distribución uniforme. \cite{krauth}
 
 Para esta propuesta del lanzamiento de agujas para la estimación de $\pi$, se comparan dos casos:
 \begin{itemize}
@@ -249,7 +249,7 @@ Para esta propuesta del lanzamiento de agujas para la estimación de $\pi$, se c
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/buffon.jpg}
-	\caption{Representación gráfica del experimento de Buffon lanzando 2000 agujas.\cite{Statistics}}
+	\caption{Representación gráfica del experimento de Buffon lanzando 2000 agujas.\cite{krauth}}
  \label{buff}
 \end{figure}
 
@@ -361,7 +361,26 @@ Finalmente, se mostró que se puede lograr simulaciones con un alto costo comput
 \end{figure}
 
 
-\bibliographystyle{alpha}
-\bibliography{bibliografia.bib}                                                                     
+\begin{thebibliography}{X}
+
+\bibitem[{Charles (1993)}] {charles}
+Charles M.(1993), {Leibniz y los dos problemas de M{\'e}r{\'e}}, Revista de la Sociedad Espa{\~n}ola de Historia de las Ciencias y de las T{\'e}cnicas {\bf 16} 241
+
+\bibitem[{Bielajew (2001)}] {biela}
+Bielajew A. (2001), Some random thoughts on Monte Carlo electron and photon transport
+
+\bibitem[{Gentle (2006)}] {gent}
+Gentle J. (2006), Random number generation and Monte Carlo methods
+
+\bibitem[{Krauth, Werner (2006)}] {krauth}
+Krauth, Werner (2006), Statistical mechanics: algorithms and computations
+
+\bibitem[{Makoto (1998)}]{mako}
+Matsumoto, Makoto and Nishimura, Takuji (1998), Mersenne twister: a 623-dimensionally equidistributed uniform pseudo-random number generator
+
+\bibitem[{Tanguy (2019)}]{tan}
+pagina web (2019), How Does Your Computer Generate Random Numbers?
+
+\end{thebibliography}
 
 \end{document}
