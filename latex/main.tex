@@ -12,29 +12,29 @@
 
 \begin{document}
 
-\title{ESTUDIO DEL MÉTODO MONTE CARLO EN SIMULACIONES PARA LA ESTIMACIÓN DEL VALOR DE PI}
+\title{ESTUDIO DEL MÉTODO MONTE CARLO EN SIMULACIONES PARA LA ESTIMACIÓN DEL VALOR DE \pi}
 
 \author{Juan Pablo Crespo Vargas\marca{*}}
 \afil{Sensei Dojo Cobra Py, https://github.com/CobraPython}%
 
 \alpie{*}{jp.crespo.vargas@gmail.com}% Las lineas se cortan automaticamente o puede obligarse esto con
 
-\author{Carlos CCC \marca{**}}
-\afil{Sensei 2 Dojo Cobra Py, https://github.com/CobraPython}%
+\author{C. Cruz \marca{**}}
+\afil{Carrera de Física, Universidad Mayor de San Andrés}%
 
-\alpie{**}{ccruz.carloscruz@gmail.com}% Las lineas se cortan automaticamente o puede obligarse esto con
+\alpie{**}{ccruz@fiumsa.edu.bo}% Las lineas se cortan automaticamente o puede obligarse esto con
 
 \begin{abstract}
 \Resumen
-En este artículo se presenta los resultados de tres metodologías diferentes en las que se aplicó una simulación Monte Carlo para estimar el valor de Pi: el método de comparación de áreas, el método propuesto por Buffon y la extensión de Laplace. Los tres casos se desarrollaron en un lenguaje de alto nivel, Python y la librería Numpy que le otorgan un performance optimizado. Se estudió con detalle el resultado no determinista de las simulaciones y se demostró que cumplen con los teoremas fundamentales de la probabilidad.
+En este artículo se presenta los resultados de tres metodologías diferentes en las que se aplicó una simulación Monte Carlo para estimar el valor de $\pi$: el método de comparación de áreas, el método propuesto por Buffon y la extensión de Laplace. Los tres casos se desarrollaron en un lenguaje de alto nivel, Python y la librería Numpy que le otorgan un performance optimizado. Se estudió con detalle el resultado no determinista de las simulaciones y se demostró que cumplen con los teoremas fundamentales de la probabilidad.
 
-\descriptores{Simulación, Monte Carlo, Pi, Buffon, Buffon-Laplace, Python, Numpy}
+\descriptores{Simulación, Monte Carlo, $\pi$, Buffon, Buffon-Laplace, Python, Numpy}
 
 
 \Abstract
-This article represents the result of three different metodologies for estimate the pi value with Monte Carlo's simulation: the comparition area's method, the method proposed by Bufffo and the Laplace's extention. The three cases had been developed in  Python ( high level language) and Numpy library which give it an optimized performance. The non-deterministic result of the simulations was studied in detail and it was shown that they comply with the fundamental theorems of probability.
+This article represents the result of three different metodologies for estimate the $\pi$ value with Monte Carlo's simulation: the comparition area's method, the method proposed by Bufffo and the Laplace's extention. The three cases had been developed in  Python ( high level language) and Numpy library which give it an optimized performance. The non-deterministic result of the simulations was studied in detail and it was shown that they comply with the fundamental theorems of probability.
 
-\keywords{Simulation, Monte Carlo, Pi, Buffon, Buffon-Laplace, Python, Numpy}
+\keywords{Simulation, Monte Carlo, $\pi$, Buffon, Buffon-Laplace, Python, Numpy}
 \end{abstract}
 
 \maketitle
@@ -75,9 +75,9 @@ Un matemático que realiza un interesante aporte en este aspecto es Leibniz, el 
 
 La probabilidad para Leibniz es un criterio objetivo de verdad. Es una lógica de lo contingente (que puede suceder o no) que se contrapone a la lógica de lo necesario. Permitiendo a la probabilidad alcanzar la verdad. El interés de Leibniz por los juegos iba más allá de la teoría de la probabilidad, sus aplicaciones podrían aplicarse al Arte de Inventar y subsecuentemente a la construcción de las características universales, temas que le parecían de mayor interés que a otros autores.\cite{Charles}
 \subsection{Experimentación y la teoría de probabilidad.}
-En 1777, el naturalista francés, el conde de Buffon $(1707-1788)$ propuso el primer experimento que utilizaba un método de Monte Carlo, pues dependía de un hecho completamente aleatorio: la caída de una aguja luego de lanzarla. Las agujas son lanzadas aleatoriamente en un piso con un patrón de rayas separadas una cierta distancia. Buffon considero que los centros están uniformemente distribuidos en un piso infinito. Las agujas no ruedan a las aberturas como lo harían en la vida real, ni estas interactúan entre sí. Además, el ángulo respecto a la horizontal es considerado distribuido uniforme entre 0 y pi/2.
+En 1777, el naturalista francés, el conde de Buffon $(1707-1788)$ propuso el primer experimento que utilizaba un método de Monte Carlo, pues dependía de un hecho completamente aleatorio: la caída de una aguja luego de lanzarla. Las agujas son lanzadas aleatoriamente en un piso con un patrón de rayas separadas una cierta distancia. Buffon considero que los centros están uniformemente distribuidos en un piso infinito. Las agujas no ruedan a las aberturas como lo harían en la vida real, ni estas interactúan entre sí. Además, el ángulo respecto a la horizontal es considerado distribuido uniforme entre 0 y $\pi$/2.
 
-El resultado al que se llegó relaciona la probabilidad de cruzar una de las rayas con la distancia de separación, la longitud de la aguja y el valor de pi. Esta se expresa en la ecuación 1
+El resultado al que se llegó relaciona la probabilidad de cruzar una de las rayas con la distancia de separación, la longitud de la aguja y el valor de $\pi$. Esta se expresa en la ecuación 1
 
 \begin{equation}
     P=\frac{2l}{d\pi}
@@ -88,7 +88,7 @@ Se conoce como la extensión de Laplace al problema de Buffon cuando se consider
 \begin{equation}
     P=\frac{2l(a+b)}{ab\pi}
 \end{equation}
-De esta propuesta, se pretende obtener el valor de pi. La probabilidad se obtiene empíricamente al realizar el experimento un número grande de veces y contar cada caso.
+De esta propuesta, se pretende obtener el valor de $\pi$. La probabilidad se obtiene empíricamente al realizar el experimento un número grande de veces y contar cada caso.
 
 Este problema histórico fue estudiado en ese entonces como una curiosidad poco práctica, debido a que obtener un resultado preciso requería un número grande de repeticiones. 
 
@@ -109,10 +109,10 @@ $\overline{x}=\frac{1}{n}\sum X_i$
 Aplicando el operador lineal Esperanza:
 
 \begin{equation}
-  \displaystyle  E(\overline{X_n}=E(\frac{1}{n} \sum X_i))
+  \displaystyle  E(\overline{X_n})=E(\frac{1}{n} \sum X_i)
 \end{equation}
 \begin{equation}
-    E(\overline{X_n}=\frac{1}{n} \sum E(X_i))
+    E(\overline{X_n})=\frac{1}{n} \sum E(X_i)
 \end{equation}
 Si consideramos que la sucesión de variables $X_i$ son independientes e idénticamente distribuidas, la Esperanza para cada variable es la media $\mu$.
 \begin{equation}
@@ -136,7 +136,7 @@ Al ser idéntica para todos tenemos:
     V({X_i})=\sigma^2
 \end{equation}
 \begin{equation}
-    V(\overline{X_n}=\frac{1}{n^2} *n\sigma^2 =\frac{\sigma^2}{n}
+    V(\overline{X_n})=\frac{1}{n^2} n\sigma^2 =\frac{\sigma^2}{n}
 \end{equation}
 Con los resultados de la esperanza y varianza del promedio, se puede enunciar el siguiente teorema: 
 
@@ -193,15 +193,15 @@ Se detalla todo el código y las dependencias en el repositorio del proyecto:
 
 https://github.com/CobraPython/montecarlopi
 
-\subsection{Generación de números Pseudeoaleatorios}
+\subsection{Generación de números pseudeoaleatorios}
 
 Existen distintos métodos para la generación de números aleatorios, sin embargo, la generación de estos en ordenador parte necesariamente desde una semilla (seed) que es un valor concedido por el usuario. Con esta semilla se genera una única serie de números aleatorios, pudiendo ser replicados a partir de esta. Por esta razón es que se denominan números pseudo aleatorios.
 La librería Numpy utiliza el algoritmo Mersenne Twistter\cite{Tanguy} (MT19937) para la generación de números pseudoaleatorios. Este método particular tiene la cualidad de tener una periodicidad bastante grande en la generación de números: $2^19937-1$\cite{Makoto}.
 
-\subsection{Métodos de estimación de Pi}
-\subsubsection{Método Simple para la estimación de Pi}
+\subsection{Métodos de estimación de $\pi$}
+\subsubsection{Método Simple para la estimación de $\pi$}
 
-Se propone estimar el número de Pi con el siguiente modelo:
+Se propone estimar el número de $\pi$ con el siguiente modelo:
 Consideramos un cuadrado de lado L, con una circunferencia en su interior de radio L.
 La relación de áreas se da en la ecuacion \ref{areaseq}:
 
@@ -216,16 +216,16 @@ En la gráfica \ref{area} se muestra un ejemplo del experimento propuesto, mostr
 \begin{figure}[htbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/areas.jpg}
-	\caption{Representación gráfica de la estimación de Pi mediante el lanzamiento aleatorio de puntos. Mientras mayor sea el número de lanzamientos las áreas son más definidas}
+	\caption{Representación gráfica de la estimación de $\pi$ mediante el lanzamiento aleatorio de puntos. Mientras mayor sea el número de lanzamientos las áreas son más definidas}
  \label{area}
 \end{figure}
 
 Queda bastante ejemplificado que mientras mayor sea el número de puntos, las áreas quedan mejor definidas.
 Para obtener esta aproximación se necesitan generar los puntos aleatoriamente con una distribución uniforme, es decir, con igual probabilidad de caer dentro y fuera del área del cuarto de circunferencia.
 
-\subsection{Método de Buffon para la estimación de Pi}
+\subsection{Método de Buffon para la estimación de $pi$}
 
-En el caso de la estimación de Pi usando la propuesta experimental de Buffon y su extensión de Laplace tenemos más variables aleatorias a considerar. Puesto que cada aguja cae aleatoriamente con un centro en $(X_i,Y_i)$, tiene relacionada otra variable aleatoria que corresponde al ángulo de inclinación $\theta$ de la aguja. La figura \ref{aguja} nos muestra un ejemplo.
+En el caso de la estimación de $\pi$ usando la propuesta experimental de Buffon y su extensión de Laplace tenemos más variables aleatorias a considerar. Puesto que cada aguja cae aleatoriamente con un centro en $(X_i,Y_i)$, tiene relacionada otra variable aleatoria que corresponde al ángulo de inclinación $\theta$ de la aguja. La figura \ref{aguja} nos muestra un ejemplo.
 
 
 
@@ -236,11 +236,11 @@ En el caso de la estimación de Pi usando la propuesta experimental de Buffon y 
  \label{aguja}
 \end{figure}
 
-Si bien en este caso se recurre a una función trigonométrica para evaluar la inclinación y considerar a las agujas que cruzan la línea, el ordenador usa recursivamente el valor de Pi para calcular la función coseno, siendo este un error “histórico” ya que recurre al valor de pi para calcular al mismo. Por esta razón se usó una corrección geométrica que evita el uso de funciones trigonométricas.
+Si bien en este caso se recurre a una función trigonométrica para evaluar la inclinación y considerar a las agujas que cruzan la línea, el ordenador usa recursivamente el valor de $\pi$ para calcular la función coseno, siendo este un error “histórico” ya que recurre al valor de $\pi$ para calcular al mismo. Por esta razón se usó una corrección geométrica que evita el uso de funciones trigonométricas.
 
 Pasando de requerir generar aleatoriamente un ángulo $\theta$, a generar aleatoriamente desplazamientos $\delta x$,$\delta y$. En la siguiente figura se muestra una representación gráfica de cómo se realiza la simulación con un número grande de lanzamientos aleatorios con distribución uniforme. \cite{Statistics}
 
-Para esta propuesta del lanzamiento de agujas para la estimación de Pi, se comparan dos casos:
+Para esta propuesta del lanzamiento de agujas para la estimación de $\pi$, se comparan dos casos:
 \begin{itemize}
     \item Problema Buffon, cuando las agujas cruzan líneas en un solo eje.
     \item Problema Buffon-Laplace, cuando las agujas cruzan líneas en sentido vertical y horizontal.
@@ -258,7 +258,7 @@ En la figura \ref{buff} se puede ver el resultado del lanzamiento de 2000 agujas
 
 
 \section{Análisis de resultados}
-\subsection{Método simple para la estimación de Pi}
+\subsection{Método simple para la estimación de $\pi$}
 \subsubsection{Comprobación del limite central}
 Se consideró el lanzamiento de $10^5$ puntos, y se repitió $10^2$ veces el experimento, el resultado obtenido tiene el siguiente comportamiento al representar su histograma. Al realizarse $3 10^3$ veces el experimento, se nota más claramente que el histograma del resultado obtenido tiene un comportamiento gaussiano. 
 \begin{figure}[h]
@@ -284,9 +284,9 @@ Se compara con realizar $3×10^3$ veces el experimento lanzando $10^6$ puntos, e
 
 El valor de $\sigma$ es menor cuando consideramos $10^6$ ($\sigma=0.00162$) en comparación con $10^5$ ($\sigma=0.00473$). 
 \subsubsection{Comprobación del teorema de números grandes.}
-Se ha estimado el valor de Pi para distintas cantidades de puntos generados. En la siguiente gráfica se muestra la congruencia de Pi con el valor más preciso que tiene la librería. Se muestra que mientras mayor es el N tomado para estimar el valor de Pi, su error absoluto converge a cero.
+Se ha estimado el valor de $\pi$ para distintas cantidades de puntos generados. En la siguiente gráfica se muestra la congruencia de $\pi$ con el valor más preciso que tiene la librería. Se muestra que mientras mayor es el N tomado para estimar el valor de $\pi$, su error absoluto converge a cero.
 En el gráfico siguiente se muestra que este comportamiento es invariante al variar las semillas en la generación de los números pseudoaleatorios.
-Finalmente, en la siguiente gráfica se muestra una comparativa de la discrepancia al estimar el valor de pi si consideramos distintas distribuciones de probabilidad en la generación aleatoria de puntos.
+Finalmente, en la siguiente gráfica se muestra una comparativa de la discrepancia al estimar el valor de $\pi$ si consideramos distintas distribuciones de probabilidad en la generación aleatoria de puntos.
 
 Se comparan tres distribuciones:
 \begin{enumerate}
@@ -301,7 +301,7 @@ Se comparan tres distribuciones:
 	\caption{En esta gráfica se comparan tres funciónes de distribución de probabilidad (pdf) que sigue el generador de números aleatorios. Con los debidos parámetros el valor converge a cero. Sin embargo, se aprecia que independientemente de los parámetros existe un valor de convergencia. }
  \label{buff5}
 \end{figure}
-Es notable que para las tres distribuciones el valor de la discrepancia del valor estimado de Pi converge a un valor mientras mayor número de lanzamientos se utilice en la prueba. Al aplicar una distribución normal con $\mu=0.27$ y  $\sigma=0.5$ el valor estimado de pi es cercano que cuando se aplica una distribución uniforme. Al aplicar una distribución exponencial con un parámetro $\lambda=0.42$, el valor estimado de Pi converge con un error de más del $0.5$. Esto se debe a que los lanzamientos de las agujas tienen mayor probabilidad de caer en cierta posición y ángulo, lo que puede equivaler de manera experimental a por ejemplo que las agujas tengan otra conformación física, como en la siguiente imagen.
+Es notable que para las tres distribuciones el valor de la discrepancia del valor estimado de $\pi$ converge a un valor mientras mayor número de lanzamientos se utilice en la prueba. Al aplicar una distribución normal con $\mu=0.27$ y  $\sigma=0.5$ el valor estimado de $\pi$ es cercano que cuando se aplica una distribución uniforme. Al aplicar una distribución exponencial con un parámetro $\lambda=0.42$, el valor estimado de $\pi$ converge con un error de más del $0.5$. Esto se debe a que los lanzamientos de las agujas tienen mayor probabilidad de caer en cierta posición y ángulo, lo que puede equivaler de manera experimental a por ejemplo que las agujas tengan otra conformación física, como en la siguiente imagen.
 
 \begin{figure}[h]
  \centering
@@ -309,7 +309,7 @@ Es notable que para las tres distribuciones el valor de la discrepancia del valo
 	\caption{Imagen de una aguja.\cite{Statistics}}
  \label{buff7}
 \end{figure}
-Si realizamos los histogramas al estimar el valor de Pi un número grande de repeticiones, aplicando las distintas distribuciones, se demuestra que tienen un comportamiento Gaussiano en todos los casos. En la siguiente gráfica se muestran los histogramas de las distribuciones normal y exponencial. 
+Si realizamos los histogramas al estimar el valor de $\pi$ un número grande de repeticiones, aplicando las distintas distribuciones, se demuestra que tienen un comportamiento Gaussiano en todos los casos. En la siguiente gráfica se muestran los histogramas de las distribuciones normal y exponencial. 
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/MCdistExp.png}
@@ -322,7 +322,7 @@ Si realizamos los histogramas al estimar el valor de Pi un número grande de rep
 	\caption{Histograma de los datos que siguen una distribución normal. Se aprecia la forma característica de "campana".}
  \label{buff9}
 \end{figure}
-\subsection{Método de Buffon para la estimación de Pi}
+\subsection{Método de Buffon para la estimación de $\pi$}
 \subsubsection{Comprobación del teorema del límite central.}
 Se consideró el lanzamiento aleatorio de 100 agujas, con una distribución uniforme para la posición y ángulo, repitiendo el experimento 200 veces para ambos casos; Buffon y la extensión de Laplace.
 
@@ -334,9 +334,9 @@ Mostrando que para ambos casos el histograma de las estimaciones de Pi para ambo
  \label{buff10}
 \end{figure}
 \subsubsection{Comprobación del teorema de los números grandes.}
-En la siguiente gráfica se resume el error porcentual al estimar el valor de Pi vs. el números de lanzamiento de agujas para ambos métodos. El error converge a cero a partir del lanzamiento de $10^6$ agujas.
+En la siguiente gráfica se resume el error porcentual al estimar el valor de $\pi$ vs. el números de lanzamiento de agujas para ambos métodos. El error converge a cero a partir del lanzamiento de $10^6$ agujas.
 
-En la anterior gráfica queda evidente que con el método corregido de Laplace el valor estimado de Pi converge a su valor esperado con un menor número de lanzamiento de agujas, en un factor de 10 al compararlo con el método original de Buffon. 
+En la anterior gráfica queda evidente que con el método corregido de Laplace el valor estimado de $\pi$ converge a su valor esperado con un menor número de lanzamiento de agujas, en un factor de 10 al compararlo con el método original de Buffon. 
 \begin{figure}[h]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/Errores.jpg}
@@ -346,7 +346,7 @@ En la anterior gráfica queda evidente que con el método corregido de Laplace e
 
 \section{Conclusiones}
 
-En esta experiencia se mostraron tres distintos métodos que aplican Monte Carlo para estimar el valor de Pi: el método simple por comparación de áreas, el método propuesto por Buffon mediante el lanzamiento de agujas y el método de Buffon ampliado por Laplace. \\
+En esta experiencia se mostraron tres distintos métodos que aplican Monte Carlo para estimar el valor de $\pi$: el método simple por comparación de áreas, el método propuesto por Buffon mediante el lanzamiento de agujas y el método de Buffon ampliado por Laplace. \\
 Se demostró que los resultados obtenidos mediante una simulación Monte Carlo tienen un carácter no determinista que cumplen con los teoremas centrales de la teoría de la probabilidad. \\
 
 Finalmente, se mostró que se puede lograr simulaciones con un alto costo computacional aplicando un lenguaje de alto nivel como Python y la librería Numpy, lo que permite tener un código simple y legible.
@@ -356,7 +356,7 @@ Finalmente, se mostró que se puede lograr simulaciones con un alto costo comput
 
 \begin{figure}[tp]
   \includegraphics[scale=0.5]{figures/errors_uniforme.png}
-	\caption{Error absoluto del valor de pi a medida que N crece. Se observa que independientemente de la semilla, representada por colores, el valor converge a 0.}
+	\caption{Error absoluto del valor de $\pi$ a medida que N crece. Se observa que independientemente de la semilla, representada por colores, el valor converge a 0.}
  \label{buff4}
 \end{figure}
 
@@ -364,4 +364,4 @@ Finalmente, se mostró que se puede lograr simulaciones con un alto costo comput
 \bibliographystyle{alpha}
 \bibliography{bibliografia.bib}                                                                     
 
-\end{document} 
+\end{document}
