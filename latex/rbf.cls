@@ -941,20 +941,13 @@
  \tabskip\z@skip
  \cr
  }
-
 %  ****************************************
 %  *         TABLES AND FIGURES           *
 %  ****************************************
-
-
-
 \def\@arstrut@hline@clnc{0.5\p@}% % Klootch: magic number
-
 \setcounter{topnumber}{7}
-
 \setlength{\belowcaptionskip}{0pt}
 \setlength{\abovecaptionskip}{5pt}
-
 \setlength{\textfloatsep}{-\baselinestretch\baselineskip}
 \setlength{\dbltextfloatsep}{-\baselinestretch\baselineskip}
 \if@apj@letter
@@ -964,7 +957,6 @@
  \addtolength{\textfloatsep}{7mm plus 10mm minus 10mm}
  \addtolength{\dbltextfloatsep}{7mm plus 10mm minus 10mm}
 \fi
-
 \renewcommand{\topfraction}{1.0}
 \renewcommand{\bottomfraction}{1.0}
 \renewcommand{\textfraction}{0.0}
@@ -974,7 +966,6 @@
 \setcounter{bottomnumber}{9}
 \setcounter{totalnumber}{20}
 \setcounter{dbltopnumber}{9} 
-
 % Copied from revtex4.cls; without it, captions are centered
 \def\@xfloat@prep{%
  \let\footnote\footnote@latex
@@ -985,7 +976,6 @@
  \let\H@@footnotetext\@mpfootnotetext
  \let\@makefntext\@mpmakefntext
 }%
-
 \long\def\@makecaption#1#2{%
  \noindent\begin{minipage}{0.9999\linewidth} %% \noindent is needed because
    %% otherwise minipage + parindent does not fit into the line and spurious
@@ -998,9 +988,6 @@
    \fi
  \end{minipage}
  }
-
-
-
 %%%%%%%%%%%% FIX \cutinhead
 \def\@ptabularcr{\\}
 \newcommand\cutinhead[1]{% 
@@ -1015,7 +1002,6 @@
 \@ptabularcr 
 \noalign{\vskip -2ex}% 
 }% 
-
 \newcommand\sidehead[1]{% 
 \noalign{\vskip 1.5ex}% 
 %  \hline 
@@ -1028,19 +1014,14 @@
 %  \@ptabularcr 
 %  \noalign{\vskip -2ex}% 
 }% 
-
-
 \newcommand\figcaption{\@testopt{\@xfigcaption}{}}% 
 %% suggested by Joern Wilms
 \def\@figcaption#1{{\def\@captype{figure}\caption{\footnotesize #1}}}
 \def\@xfigcaption[#1]#2{{\def\@captype{figure}\caption{\footnotesize #2}}}
-
 %\def\@figcaption#1{{\def\@captype{figure}\caption{\normalsize #1}}}
 %\def\@xfigcaption[#1]#2{{\def\@captype{figure}\caption{\normalsize #2}}}
-
 \def\thefigure{\@arabic\c@figure}
 \def\fnum@figure{{\footnotesize{\@eapj@cap@font\if@chicago~~\fi\mbox{\@eapj@figname~\thefigure.}\if@chicago---\else~\fi}}}
-
 \def\thetable{\@arabic\c@table}
 %%% Table captions without making a floating table
 \def\tabcaption{\@ifnextchar[{\@xtabcaption}{\@tabcaption}}
@@ -1056,8 +1037,6 @@
 \long\def\@makecaption@plano@cont#1#2{% 
  {\small \centering#1\par}\vskip1.4ex\relax
 }% 
-
-
 %% Commands from aastex.cls:
 \newcommand\dataset{\@testopt\@dataset{[}}%
 \def\@dataset[#1]#2{#2}%
@@ -1099,7 +1078,6 @@
 \let\@currentlabel\thefigure 
 \addtocounter{figure}{\m@ne}% 
 }% 
-
 \newcommand\phn{\phantom{0}}% 
 \newcommand\phd{\phantom{.}}% 
 \newcommand\phs{\phantom{$-$}}% 
@@ -1131,7 +1109,6 @@
  \kern -0.1ex% 
 }% 
 }% 
-
 \newcommand\ion[2]{#1$\;${%
 \ifx\@currsize\normalsize\small \else
 \ifx\@currsize\small\footnotesize \else
@@ -1141,7 +1118,6 @@
 \ifx\@currsize\Large\large
 \fi\fi\fi\fi\fi\fi
 \rmfamily\@Roman{#2}}\relax}% 
-
 \renewcommand\case[2]{\mbox{$\frac{#1}{#2}$}}% 
 \renewcommand\slantfrac{\case}% 
 \newcommand\onehalf{\slantfrac{1}{2}}% 
@@ -1187,11 +1163,9 @@
 \newcommand\Capricornus{\astro{\char20}}% 
 \newcommand\Aquarius{\astro{\char21}}% 
 \newcommand\Pisces{\astro{\char22}}% 
-
 \newcommand\anchor[2]{#2}% 
 \renewcommand\url{\@dblarg\@url}% 
 \def\@url[#1]{\anchor{#1}}% 
-
 \let\jnl@style=\rmfamily 
 \def\ref@jnl#1{{\jnl@style#1}}% 
 \newcommand\aj{\ref@jnl{AJ}}% 
@@ -1290,22 +1264,16 @@
 \let\apjlett=\apjl 
 \let\apjsupp=\apjs 
 \let\applopt=\ao 
-
 \renewcommand\nodata{ ~$\cdots$~ }% 
 \newcommand\ulap[1]{\vbox\@to\z@{{\vss#1}}}% 
 \newcommand\dlap[1]{\vbox\@to\z@{{#1\vss}}}% 
-
-
 % Implementation of deluxetables via the longtable package
-
-
 \newcounter{table@save}
 \def\save@label#1{
  \if@filesw\immediate\write\@auxout{%
    \string\newlabel{#1}{{\@currentlabel}{\thepage}}}%
  \fi%
 }
-
 \def\tablenum#1{%
  \setcounter{table@save}{\the\c@table}
  \gdef\use@tablenum{1}
@@ -1314,22 +1282,17 @@
 }%
 \gdef\use@tablenum{0}
 \def\restore@tablenum{\if\use@tablenum0\else\setcounter{table}{\the\c@table@save}\addtocounter{table}{\m@ne}\gdef\use@tablenum{0}\fi}
-
-
 \def\tabletypesize#1{\def\table@hook{#1}\gdef\@table@type@size{#1}}
 \tabletypesize{\footnotesize}
 \let\tablefontsize=\tabletypesize % for compatibility with old documents
-
 \gdef\@tablecaption{}
 \def\tablecaption#1{\gdef\@tablecaption{\if@chicago \@eapj@cap@font \fi #1}}
-
 \def\LT@endpbox{%
  \@finalstrut\@arstrutbox
  \egroup
  \the\LT@p@ftn
  \global\LT@p@ftn{}%
  \hfil}
-
 \def\LT@makecaption#1#2#3{%
  \LT@mcol\LT@cols c{\hbox to\z@{\hss\parbox[t]\LTcapwidth{%
 %     \sbox\@tempboxa{#2.~~#3}%
@@ -1341,20 +1304,15 @@
 %     \fi
    \endgraf\vskip\baselineskip}%
  \hss}}}
-
 \global\let\tablenotemark\relax
 \global\def\tablenotemark#1{{\normalfont\textsuperscript{#1}}}
 \global\let\tablenotetext\relax
 \global\def\tablenotetext#1#2{\footnotetext[#1]{\@table@type@size#2}}
-
-
 \newif\if@table@not@headed
-
 \def\startdata{\if@table@not@headed\kill\caption{\\%
    \@tablecaption}\endhead\hline\endfoot%
  \fi%
 }
-
 \def\tablehead#1{
  \@table@not@headedfalse%
  \kill
@@ -1375,16 +1333,12 @@
  \hline
  \endfoot%
 }
-
 \newlength{\table@note@skip}
 \setlength{\table@note@skip}{0.5ex}
 \newlength{\deluxe@table@width}
 \newlength{\@d@t@a}
 \newcounter{deluxe@table@num}
-
 \def\colhead#1{\multicolumn{1}{c}{#1}}
-
-
 \def\tablewidth#1{%
  \ifdim#1=\z@
  \else
@@ -1396,8 +1350,6 @@
  \fi
  \fi
 }
-
-
 \def\save@natural@width{%
      \ifnum\@d@t@@flag=0
        \setlength{\@d@t@a}{0pt}%
@@ -1410,7 +1362,6 @@
        \def\LT@entry{\@d@t@b}
      \fi
 }
-
 \def\lt@expand@linewidth@one{\setlength\LTleft{0pt}\setlength\LTright{0pt}}
 \def\lt@expand@linewidth@two{@{\extracolsep{0pt plus 1filll}}}
 \def\find@table@width{%
@@ -1436,26 +1387,20 @@
      \def\lt@expand@linewidth@{\lt@expand@linewidth@two}
    \fi
 }
-
 \newlength{\abovedeluxetableskip}
 \newlength{\belowdeluxetableskip}
 \setlength{\abovedeluxetableskip}{0pt}
 \setlength{\belowdeluxetableskip}{0pt}
 \setlength{\tabcolsep}{5pt}
-
 \setlength\doublerulesep{1.5pt}
 \newdimen\lastrowheight
 \def\set@last@row@height{\setlength{\lastrowheight}{\ht\strutbox}\addtolength{\lastrowheight}{\dp\strutbox}\setlength{\lastrowheight}{-\arraystretch\lastrowheight}}
-
 \let\tableline=\hline % Revtex said: Command \tableline is obsolete; Use \colrule instead.. 
-
 \newtoks\DT@p@ftn 
 \global\def\tablenotetext@DT#1#2{
 %  \edef\@tempa{\the\DT@p@ftn\noexpand\footnotetext[#1]}
  \edef\@tempa{\the\DT@p@ftn\noexpand\tablenotemark{#1}~}
  \global\DT@p@ftn\expandafter{\@tempa{\@table@type@size#2}\par}}%
-
-
 \newenvironment{deluxetable}[1]{
  \lineskiplimit=\z@ % restore default setting
  \def\tablenotetext{\tablenotetext@DT}
@@ -1485,8 +1430,6 @@
    \vspace*{\belowdeluxetableskip}
  \end{table}
 }
-
-
 \newenvironment{deluxetable*}[1]{
  \lineskiplimit=\z@ % restore default setting
  \def\tablenotetext{\tablenotetext@DT}
@@ -1516,10 +1459,7 @@
  \end{minipage}%
  \vspace*{\belowdeluxetableskip}
 \end{table*}}
-
 \def\enddata{\\[\lastrowheight@]\vspace*{1.5mm}}
-
-
 \def\LongTables{
  \renewcommand\tablecomments[1]{\gdef\tblnote@list{\@tablecom{##1}}}% 
  \renewcommand\tablerefs[1]{\gdef\tblref@list{\@tableref{##1}}}% 
@@ -1558,7 +1498,6 @@
    \end{minipage}
 }
 }
-
 \def\tableheadfrac#1{}
 \newcount\pt@column 
 \newcount\pt@ncol 
@@ -1586,7 +1525,6 @@
 %  \noalign{\vskip .5ex}% 
 % }% 
 %\def\startdata{\relax}
-
 \gdef\tblnote@list{}
 \gdef\tblref@list{}
 \newcommand\tablecomments[1]{\@tablecom{#1}}% 
@@ -1619,7 +1557,6 @@
 % \footnoterule% 
 {\@table@type@size#1}% 
 }% 
-
 \endinput
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Release notes (02/09/03):
