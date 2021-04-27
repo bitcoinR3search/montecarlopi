@@ -46,7 +46,7 @@ def dibujar(txt):
 	k = 1/(pi_l[1]*np.sqrt(2*np.pi))
 	Norm= k*np.exp((-1/2)*((xhist-pi_l[0])/pi_l[1])**2)
 	plt.plot(xhist,Norm)
-	plt.title('Estimación de '+str(k_)+' valores de Pi \n obtenidas por Buffon lanzando %.0e agujas' % N_ )
+	plt.title('Estimación de '+str(k_)+' valores de $\\pi$ \n obtenidas por Buffon lanzando %.0e agujas' % N_ )
 	plt.xlabel('valor medio Pi simulado', fontsize=14)
 	plt.ylabel('Frecuencia Pi simulado ', fontsize=14)
 	plt.grid()
@@ -120,14 +120,14 @@ def errores(N):
 #Laplace
 
 	plt.semilogx(io[indices],pi_l_e,'ob',label='Buffon')
-	plt.title('Error:  Pi estimado vs Número de Lanzamientos',fontsize=18)
+	plt.title('Error:  $\\pi$ estimado vs Número de Lanzamientos',fontsize=18)
 	plt.xlabel('N agujas lanzadas', fontsize=18)
 	plt.ylabel('Error Porcentual Pi', fontsize=18)	
 #laplace Buffon
 	plt.semilogx(io[indices],pi_lb_e,'or',label='Laplace-Buffon')
 	plt.legend(prop={'size': 16})
 	plt.grid()
-	plt.savefig("images/Errores.jpg")	
+	plt.savefig("Errores.jpg")	
 	plt.close(2)
 	
 
@@ -135,20 +135,5 @@ def errores(N):
 
 if __name__=='__main__':
 
-	contenido = os.listdir('binaries/')
-
-	aux,pi_l,pi_lb=[],[],[]	
-	for txt in contenido:
-			a=txt[1:10]
-			aux.append(float(a))
-			path='binaries/'+txt
-			data = np.load(path,allow_pickle=True)
-			pi_l.append(data['arr_0'])
-			pi_lb.append(data['arr_1'])
-
-
-	print(aux[15])
-	print(pi_l[15][0])
-	print(pi_l[15][1]/2)
-	print(pi_lb[15][0])
-	print(pi_lb[15][1]/2)
+	N=np.logspace(10,2,50,endpoint=True,dtype=np.int64)
+	errores(N)

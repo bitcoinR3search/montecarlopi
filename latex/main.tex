@@ -1,13 +1,9 @@
 % ****** rbf.tex ******
 % Este archivo provee el formato para la Revista Boliviana de Fisica, RBF.
 \documentclass{rbf}
-%\documentclass[onecolumn]{rbf}
-
 \usepackage{amsmath}
-\usepackage{natbib}
+%\usepackage{natbib}
 \usepackage[utf8]{inputenc}
-%\usepackage[latin1]{inputenc}
-
 
 
 \begin{document}
@@ -49,8 +45,8 @@ El método de Monte Carlo tiene un génesis moderno en el trabajo pionero de Sta
 Hoy resulta una alegre ironía que ningún producto que haya aplicado la metodología Monte Carlo en su desarrollo, se haya empleado en conflicto alguno. Más aún los científicos han explotado el uso de simulaciones Monte Carlo para obtener un beneficio público positivo aplicándola en salud. Por ejemplo, los planeamientos de dosis en radioterapia dependen actualmente en algún grado de cálculos obtenidos mediante simulaciones que emplean Monte Carlo.
 
 El método de Monte Carlo es un método de resolución numérica donde se modelan las relaciones e interacciones de distintos objetos y su entorno, mediante la generación aleatoria de estas interacciones. Mientras mayor sea la repetición de pruebas se obtiene un resultado que va convergiendo a un valor con mayor precisión. Es por el recurso de la aleatoriedad que obtiene el nombre Monte Carlo, pues se inspira en la región del Principado de Mónaco donde se encuentran el casino Monte Carlo.
-Un método Monte Carlo se puede definir de la siguiente forma: <<Los métodos Monte Carlo son aquéllos en los que las propiedades de las distribuciones de las variables aleatorias son investigadas mediante la simulación de números aleatorios. Estos métodos, dejando a un lado el origen de los datos, son similares a los métodos estadísticos habituales en los cuales las muestras aleatorias se utilizan para realizar inferencias acerca de las poblaciones origen. Generalmente, en su aplicación estadística se utiliza un modelo para simular un fenómeno que contiene algún componente aleatorio. En los métodos Monte Carlo, por otro lado, el objeto de la investigación es un modelo en sí mismo, y se utilizan sucesos aleatorios o pseudoaleatorios para estudiarlo.\cite{gent}
 
+Un método Monte Carlo se puede definir de la siguiente forma: <<Los métodos Monte Carlo son aquéllos en los que las propiedades de las distribuciones de las variables aleatorias son investigadas mediante la simulación de números aleatorios. Estos métodos, dejando a un lado el origen de los datos, son similares a los métodos estadísticos habituales en los cuales las muestras aleatorias se utilizan para realizar inferencias acerca de las poblaciones origen. Generalmente, en su aplicación estadística se utiliza un modelo para simular un fenómeno que contiene algún componente aleatorio. En los métodos Monte Carlo, por otro lado, el objeto de la investigación es un modelo en sí mismo, y se utilizan sucesos aleatorios o pseudoaleatorios para estudiarlo.\cite{gent}
 
 El método cobra una especial relevancia las últimas décadas debido a que se produjeron sustanciales y significativos avances respecto a la potencia de los procesadores y las distintas arquitecturas informáticas. Es ampliamente usado en problemas donde obtener un resultado analítico no es posible, o en problemas que contienen demasiada complejidad (como es el caso de la ecuación de transporte de Boltzmann para partículas sin carga).\cite{biela}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,20 +59,20 @@ Un matemático que realiza un interesante aporte en este aspecto es Leibniz, el 
 
 La probabilidad para Leibniz es un criterio objetivo de verdad. Es una lógica de lo contingente (que puede suceder o no) que se contrapone a la lógica de lo necesario. Permitiendo a la probabilidad alcanzar la verdad. El interés de Leibniz por los juegos iba más allá de la teoría de la probabilidad, sus aplicaciones podrían aplicarse al Arte de Inventar y subsecuentemente a la construcción de las características universales, temas que le parecían de mayor interés que a otros autores.\cite{charles}
 
-\subsection{Experimentación y la teoría de probabilidad.}
+\subsection{Experimentación y la teoría de probabilidad}
 
-En 1777, el naturalista francés, el conde de Buffon $(1707-1788)$ propuso el primer experimento que utilizaba un método de Monte Carlo, pues dependía de un hecho completamente aleatorio: la caída de una aguja luego de lanzarla. Las agujas son lanzadas aleatoriamente en un piso con un patrón de rayas separadas una cierta distancia. Buffon considero que los centros están uniformemente distribuidos en un piso infinito. Las agujas no ruedan a las aberturas como lo harían en la vida real, ni estas interactúan entre sí. Además, el ángulo respecto a la horizontal es considerado distribuido uniforme entre 0 y $\pi$/2.
+En 1777, el naturalista francés, el conde de Buffon ($1707-1788$) propuso el primer experimento que utilizaba un método de Monte Carlo, pues dependía de un hecho completamente aleatorio: la caída de una aguja luego de lanzarla. Las agujas son lanzadas aleatoriamente en un piso con un patrón de rayas separadas una cierta distancia. Buffon considero que los centros están uniformemente distribuidos en un piso infinito. Las agujas no ruedan a las aberturas como lo harían en la vida real, ni estas interactúan entre sí. Además, el ángulo respecto a la horizontal es considerado distribuido uniforme entre 0 y $\pi/2$.
 
 El resultado al que se llegó relaciona la probabilidad de cruzar una de las rayas con la distancia de separación, la longitud de la aguja y el valor de $\pi$. Esta se expresa en la Ec.\ref{ec1}.
 
 \begin{equation}\label{ec1}
-    P=\frac{2l}{d\pi}
+    P=\frac{2*l}{d\pi}
 \end{equation}
 
-Se conoce como la extensión de Laplace al problema de Buffon cuando se considera tanto líneas verticales como horizontales. Se llama Buffon-Laplace pues, aunque Buffon resolvió este problema contenía un error que más tarde, 1812, fue corregido por Laplace expresándose en la Ec. \ref{ec2}.
+Se conoce como la extensión de Laplace al problema de Buffon cuando se considera tanto líneas verticales como horizontales. Se llama Buffon-Laplace aunque Buffon, quien resolvió este problema anteriormente contenía un error que más tarde en 1812 fue corregido por Laplace expresándose en la Ec. \ref{ec2}.
 
 \begin{equation}\label{ec2}
-    P=\frac{2l(a+b)}{ab\pi}
+    P=\frac{2*l*(a+b)}{a*b*\pi}
 \end{equation}
 
 De esta propuesta, se pretende obtener el valor de $\pi$. La probabilidad se obtiene empíricamente al realizar el experimento un número grande de veces y contar cada caso.
@@ -87,7 +83,7 @@ Durante el siglo XX, con el advenimiento de las nuevas tecnologías es que el m�
 
 \subsection{Teorema de los Números Grandes}
 
-Sea $X_1,..., X_n$ una sucesión de variables aleatorias, diremos que la sucesión de ${X_n}$ converge en probabilidad a X (que es otra variable aleatoria) si solo si para todo $\forall \varepsilon >0$:
+Sea $X_1,..., X_n$ una sucesión de variables aleatorias, diremos que la sucesión de ${X_n}$ converge en probabilidad a $X$ (que es otra variable aleatoria), si solo si para todo $\forall \varepsilon >0$:
 
 \begin{equation}
    \displaystyle \lim_{x \to \infty}(P[(X_n - X)>\varepsilon]=0)
@@ -95,8 +91,10 @@ Sea $X_1,..., X_n$ una sucesión de variables aleatorias, diremos que la sucesi�
 
 Siendo conocida esta expresión como criterio de convergencia débil. 
 
-Tomamos la variable aleatoria de interés, el promedio:
+Tomamos la variable aleatoria de interés, el promedio: \\
+
 $\overline{x}=\frac{1}{n}\sum X_i$  
+\\
 
 Aplicando el operador lineal Esperanza:
 
@@ -124,7 +122,7 @@ De igual manera con el operador varianza tenemos:
 \begin{equation}
   \displaystyle   V(\overline{X_n})=V(\frac{1}{n} \sum X_i)
 \end{equation}
-Con el supuesto de las variables $(X_i )$, son independientes e idénticamente distribuidas, la varianza de la suma, es la suma de las varianzas:
+Con el supuesto de las variables $(X_i)$, son independientes e idénticamente distribuidas, la varianza de la suma, es la suma de las varianzas:
 
 \begin{equation}
   \displaystyle  V(\overline{X_n})=\frac{1}{n^2} \sum V(X_i)
@@ -169,6 +167,7 @@ Mostrando que cuando $n$ tiende a un número grande, la probabilidad se anula y 
 
 \subsection{Teorema del Limite Central}
 Sea $X_(1,...,) X_n$ una sucesión de variables aleatorias, independientes e idénticamente distribuidas tales que $\forall_i$  tengan el segundo momento finito  $E(X_i^2)<\infty$ con una media $\infty$ y una varianza $\sigma^2$ distinta de cero. Entonces, si $n$ es suficientemente grande, la variable aleatoria promedio:
+
 \begin{equation}
   \displaystyle   \overline{X}=\frac{1}{n}\sum X_i
 \end{equation}
@@ -188,7 +187,7 @@ El teorema central de la probabilidad tiene una importancia categórica al ser e
 %   midelo de simulacion
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Modelo de Simulación.}
+\section{Modelo de Simulación}
 \subsection{Entorno de desarrollo}
 
 Como quedo manifiesto en el anterior punto el método Monte Carlo tiene una precisión proporcional a $\frac{1}{\sqrt{N}}$. En comparación con otros métodos numéricos determinísticos (como por ejemplo el método de trapecios o Simpson para encontrar la integral de una función definida) que tienen un error de aproximación proporcional a $\frac{1}{N^2}$ en el mejor de los casos, los métodos que aplican Monte Carlo (como por ejemplo la integración por Monte Carlo) requieren una cantidad considerable mayor de datos a procesar. Sumado este hecho a la complejidad que puede involucrar el modelamiento de las interacciones aleatorias, es que generalmente se prefiere usar lenguajes de programación de bajo nivel que permitan optimizar el tiempo de cómputo total.
@@ -240,7 +239,7 @@ Para obtener esta aproximación se necesitan generar los puntos aleatoriamente c
 
 \subsection{Método de Buffon para la estimación de $pi$}
 
-En el caso de la estimación de $\pi$ usando la propuesta experimental de Buffon y su extensión de Laplace tenemos más variables aleatorias a considerar. Puesto que cada aguja cae aleatoriamente con un centro en $(X_i,Y_i)$, tiene relacionada otra variable aleatoria que corresponde al ángulo de inclinación $\theta$ de la aguja. La Fig.\ref{aguja} nos muestra un ejemplo.
+En el caso de la estimación de $\pi$ usando la propuesta experimental de Buffon y la extensión de Laplace, tenemos más variables aleatorias a considerar. Puesto que cada aguja cae aleatoriamente con un centro en $(X_i,Y_i)$, tiene relacionada otra variable aleatoria que corresponde al ángulo de inclinación $\theta$ de la aguja. La Fig.\ref{aguja} nos muestra un ejemplo.
 
 
 
@@ -264,19 +263,19 @@ Para esta propuesta del lanzamiento de agujas para la estimación de $\pi$, se c
 
 
 
-En la Figura \ref{buff} se puede ver el resultado del lanzamiento de 2000 agujas de largo $a$ de la misma longitud que la separación de las lineas $b$, es decir que $a=b$. La probabilidad se calcula en relación a cuantas agujas cruzan una línea sobre el total de agujas. 
+En la Figura \ref{buff} se puede ver el resultado del lanzamiento de $2000$ agujas de largo $a$ de la misma longitud que la separación de las lineas $b$, es decir que $a=b$. La probabilidad se calcula en relación a cuantas agujas cruzan una línea sobre el total de agujas. 
 
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/buffon.jpg}
-    \caption{Representación gráfica del experimento de Buffon lanzando 2000 agujas.\cite{krauth}}
+    \caption{Representación gráfica del experimento de Buffon lanzando $2000$ agujas.\cite{krauth}}
  \label{buff}
 \end{figure}
 
 \section{Análisis de resultados}
 \subsection{Método simple para la estimación de $\pi$}
 \subsubsection{Comprobación del limite central}
-Se consideró el lanzamiento de $10^5$ puntos, y se repitió $10^2$ veces el experimento, el resultado obtenido tiene el siguiente comportamiento al representar su histograma. Al realizarse $3 \times 10^3$ veces el experimento, se nota más claramente que el histograma del resultado obtenido tiene un comportamiento gaussiano.
+Se consideró el lanzamiento de $10^5$ puntos y se repitió $10^2$ veces el experimento, el histograma obtenido se muestra en la figura \ref{buff1}. Al realizarse $3 \times 10^3$ veces el experimento, en la figura \ref{buff2} se nota más claramente que el histograma obtenido tiene un comportamiento gaussiano.
 
 \begin{figure}[h]
  \centering
@@ -291,7 +290,10 @@ Se consideró el lanzamiento de $10^5$ puntos, y se repitió $10^2$ veces el exp
 	\caption{Histograma del método simple para 3000 repeticiones de 100000 lanzamientos. Se aprecia el comportamiento gaussiano, la característica forma de "campana".}
  \label{buff2}
 \end{figure}
-Se compara con realizar $3 \times 10^3$ veces el experimento lanzando $10^6$ puntos, el comportamiento del histograma es también Gaussiano.
+
+
+Si se compara con el histograma de la figura \ref{buff3} al realizar $3 \times 10^3$ veces el experimento lanzando $10^6$ puntos, el comportamiento del histograma es también claramente Gaussiano.
+
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.5\textwidth]{figures/3000rep1e6.png}
@@ -299,10 +301,17 @@ Se compara con realizar $3 \times 10^3$ veces el experimento lanzando $10^6$ pun
  \label{buff3}
 \end{figure}
 
-El valor de $\sigma$ es menor cuando consideramos $10^6$ ($\sigma=0.00162$) en comparación con $10^5$ ($\sigma=0.00473$). 
-\subsubsection{Comprobación del teorema de números grandes.}
-Se ha estimado el valor de $\pi$ para distintas cantidades de puntos generados. En la Fig. \ref{buff5} se muestra la congruencia de $\pi$ con el valor más preciso que tiene la librería. Se muestra que mientras mayor es el $N$ tomado para estimar el valor de $\pi$, su error absoluto converge a cero.
-En la Fig. \ref{buff5} se muestra que este comportamiento es invariante al variar las semillas en la generación de los números pseudoaleatorios. Finalmente, en la Fig. \ref{buff5} se muestra una comparativa de la discrepancia al estimar el valor de $\pi$ si consideramos distintas distribuciones de probabilidad en la generación aleatoria de puntos.
+También se puede resaltar que el valor de $\sigma$ es menor cuando consideramos $10^6$ ($\sigma=0.00162$) en comparación con $10^5$ ($\sigma=0.00473$). 
+
+\subsubsection{Comprobación del teorema de números grandes}
+
+Se ha estimado el valor de $\pi$ para distintas cantidades de puntos generados. En la Fig. \ref{buff11} se muestra la congruencia de $\pi$ con el valor que tiene la librería Numpy (IEEE 754 double-precision format). Se muestra que mientras mayor es el $N$ tomado para estimar el valor de $\pi$, su error absoluto converge a cero.
+
+
+En la Fig. \ref{buff4} se muestra que este comportamiento es invariante al variar las semillas en la generación de los números pseudoaleatorios. 
+
+
+Finalmente, en la Fig. \ref{buff5} se muestra una comparativa de la discrepancia al estimar el valor de $\pi$ si consideramos distintas distribuciones de probabilidad en la generación aleatoria de puntos.
 
 Se comparan tres distribuciones:
 \begin{enumerate}
@@ -320,13 +329,10 @@ Se comparan tres distribuciones:
 
 Es notable que para las tres distribuciones el valor de la discrepancia del valor estimado de $\pi$ converge a un valor mientras mayor número de lanzamientos se utilice en la prueba. Al aplicar una distribución normal con $\mu=0.27$ y  $\sigma=0.5$ el valor estimado de $\pi$ es cercano que cuando se aplica una distribución uniforme. Al aplicar una distribución exponencial con un parámetro $\lambda=0.42$, el valor estimado de $\pi$ converge con un error de más del $0.5$. Esto se debe a que los lanzamientos de las agujas tienen mayor probabilidad de caer en cierta posición y ángulo, lo que puede equivaler de manera experimental a por ejemplo que las agujas tengan otra conformación física, como en la siguiente imagen.
 
-\begin{figure}[h]
- \centering
-  \includegraphics[width=0.4\textwidth]{figures/aguja.png}
-	\caption{Imagen de una aguja.\cite{krauth}}
- \label{buff7}
-\end{figure}
-Si realizamos los histogramas al estimar el valor de $\pi$ un número grande de repeticiones, aplicando las distintas distribuciones, se demuestra que tienen un comportamiento Gaussiano en todos los casos. En la siguiente gráfica se muestran los histogramas de las distribuciones normal y exponencial. 
+
+Si realizamos los histogramas al estimar el valor de $\pi$ en un número grande de repeticiones aplicando distintas distribuciones en la generación de puntos y ángulos de las agujas, se demuestra que invariantemente se tienen un comportamiento Gaussiano en todos los casos.
+ En las figuras \ref{buff9} y \ref{buff8} se muestran los histogramas de las distribuciones normal y exponencial respectivamente. 
+
 \begin{figure}[tbp!]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/exp.png}
@@ -339,25 +345,33 @@ Si realizamos los histogramas al estimar el valor de $\pi$ un número grande de 
 	\caption{Histograma de los datos que siguen una distribución normal. Se aprecia la forma característica de "campana".}
  \label{buff9}
 \end{figure}
-\subsection{Método de Buffon para la estimación de $\pi$}
-\subsubsection{Comprobación del teorema del límite central.}
-Se consideró el lanzamiento aleatorio de 100 agujas, con una distribución uniforme para la posición y ángulo, repitiendo el experimento 200 veces para ambos casos; Buffon y la extensión de Laplace.
 
-Mostrando que para ambos casos el histograma de las estimaciones de Pi para ambos métodos presenta un comportamiento Gaussiano, demostrando la validez del teorema del límite central.
+\subsection{Método de Buffon para la estimación de $\pi$}
+\subsubsection{Comprobación del teorema del límite central}
+
+Se consideró el lanzamiento aleatorio de $2 \time 10^8$ agujas con una distribución uniforme para la posición y ángulo, repitiendo el experimento 200 veces para ambos casos; Buffon y la extensión de Laplace.
+
+Mostrando que el histograma de las estimaciones de Pi para ambos métodos presenta un comportamiento Gaussiano, demostrando la validez del teorema del límite central.
+
 \begin{figure}[h]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/lap.jpg}
-	\caption{Comparación histogramas. A la izquierda siguiendo el método de Buffon y a la derecha Buffon con la corrección de Laplace. }
+	\caption{Comparación histogramas. A la izquierda siguiendo el método de Buffon y a la derecha Buffon con la corrección de Laplace.}
  \label{buff10}
 \end{figure}
-\subsubsection{Comprobación del teorema de los números grandes.}
+
+
+
+\subsubsection{Comprobación del teorema de los números grandes}
+
 En la siguiente gráfica se resume el error porcentual al estimar el valor de $\pi$ vs. el números de lanzamiento de agujas para ambos métodos. El error converge a cero a partir del lanzamiento de $10^6$ agujas.
 
-En la anterior gráfica queda evidente que con el método corregido de Laplace el valor estimado de $\pi$ converge a su valor esperado con un menor número de lanzamiento de agujas, en un factor de 10 al compararlo con el método original de Buffon. 
+En la anterior gráfica queda evidente que con el método corregido de Laplace el valor estimado de $\pi$ converge a su valor esperado con un menor número de lanzamiento de agujas casi en un factor de 10 al compararlo con el método original de Buffon. 
+
 \begin{figure}[h]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/err.jpg}
-	\caption{Se comparan los errores de ambos métodos (Buffon y Buffon-Laplace). SE observa que los datos de Buffon-Laplace convergen a 0 con un menor N que los datos de Buffon.}
+	\caption{Se comparan los errores de ambos métodos (Buffon y Buffon-Laplace). Se observa que los datos de Buffon-Laplace convergen a 0 con un menor N que los datos de Buffon.}
  \label{buff11}
 \end{figure}
 
