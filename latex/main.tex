@@ -263,7 +263,7 @@ Para esta propuesta del lanzamiento de agujas para la estimación de $\pi$, se c
 
 
 
-En la Figura \ref{buff} se puede ver el resultado del lanzamiento de $2000$ agujas de largo $a$ de la misma longitud que la separación de las lineas $b$, es decir que $a=b$. La probabilidad se calcula en relación a cuantas agujas cruzan una línea sobre el total de agujas. 
+En la Fig. \ref{buff} se puede ver el resultado del lanzamiento de $2000$ agujas de largo $a$ de la misma longitud que la separación de las lineas $b$, es decir que $a=b$. La probabilidad se calcula en relación a cuantas agujas cruzan una línea sobre el total de agujas. 
 
 \begin{figure}[tbp!]
  \centering
@@ -275,7 +275,8 @@ En la Figura \ref{buff} se puede ver el resultado del lanzamiento de $2000$ aguj
 \section{Análisis de resultados}
 \subsection{Método simple para la estimación de $\pi$}
 \subsubsection{Comprobación del limite central}
-Se consideró el lanzamiento de $10^5$ puntos y se repitió $10^2$ veces el experimento, el histograma obtenido se muestra en la figura \ref{buff1}. Al realizarse $3 \times 10^3$ veces el experimento, en la figura \ref{buff2} se nota más claramente que el histograma obtenido tiene un comportamiento gaussiano.
+
+Se consideró el lanzamiento de $10^5$ puntos y se repitió $10^2$ veces el experimento, el histograma obtenido se muestra en la Fig. \ref{buff1}. Al realizarse $3 \times 10^3$ veces el experimento, en la Fig. \ref{buff2} se nota más claramente que el histograma obtenido tiene un comportamiento gaussiano.
 
 \begin{figure}[h]
  \centering
@@ -292,7 +293,7 @@ Se consideró el lanzamiento de $10^5$ puntos y se repitió $10^2$ veces el expe
 \end{figure}
 
 
-Si se compara con el histograma de la figura \ref{buff3} al realizar $3 \times 10^3$ veces el experimento lanzando $10^6$ puntos, el comportamiento del histograma es también claramente Gaussiano.
+Si se compara con el histograma de la Fig. \ref{buff3} al realizar $3 \times 10^3$ veces el experimento lanzando $10^6$ puntos, el comportamiento del histograma es también claramente Gaussiano.
 
 \begin{figure}[tbp!]
  \centering
@@ -307,9 +308,22 @@ También se puede resaltar que el valor de $\sigma$ es menor cuando consideramos
 
 Se ha estimado el valor de $\pi$ para distintas cantidades de puntos generados. En la Fig. \ref{buff11} se muestra la congruencia de $\pi$ con el valor que tiene la librería Numpy (IEEE 754 double-precision format). Se muestra que mientras mayor es el $N$ tomado para estimar el valor de $\pi$, su error absoluto converge a cero.
 
+\begin{figure}[h]
+ \centering
+  \includegraphics[width=0.4\textwidth]{figures/err.jpg}
+    \caption{Se comparan los errores de ambos métodos (Buffon y Buffon-Laplace). Se observa que los datos de Buffon-Laplace convergen a 0 con un menor N que los datos de Buffon.}
+ \label{buff11}
+\end{figure}
+
 
 En la Fig. \ref{buff4} se muestra que este comportamiento es invariante al variar las semillas en la generación de los números pseudoaleatorios. 
 
+
+\begin{figure}[tp]
+  \includegraphics[scale=0.5]{figures/errors.png}
+    \caption{Error absoluto del valor de $\pi$ a medida que $N$ crece. Se observa que independientemente de la semilla representada por colores, el valor converge a 0.}
+ \label{buff4}
+\end{figure}
 
 Finalmente, en la Fig. \ref{buff5} se muestra una comparativa de la discrepancia al estimar el valor de $\pi$ si consideramos distintas distribuciones de probabilidad en la generación aleatoria de puntos.
 
@@ -331,7 +345,7 @@ Es notable que para las tres distribuciones el valor de la discrepancia del valo
 
 
 Si realizamos los histogramas al estimar el valor de $\pi$ en un número grande de repeticiones aplicando distintas distribuciones en la generación de puntos y ángulos de las agujas, se demuestra que invariantemente se tienen un comportamiento Gaussiano en todos los casos.
- En las figuras \ref{buff9} y \ref{buff8} se muestran los histogramas de las distribuciones normal y exponencial respectivamente. 
+ En las Figs. \ref{buff9} y \ref{buff8} se muestran los histogramas de las distribuciones normal y exponencial respectivamente. 
 
 \begin{figure}[tbp!]
  \centering
@@ -339,6 +353,7 @@ Si realizamos los histogramas al estimar el valor de $\pi$ en un número grande 
 	\caption{Histograma de los datos que siguen una distribución exponencial. Se aprecia el comportamiento gaussiano.}
  \label{buff8}
 \end{figure}
+
 \begin{figure}[h]
  \centering
   \includegraphics[width=0.4\textwidth]{figures/norm.png}
@@ -347,11 +362,12 @@ Si realizamos los histogramas al estimar el valor de $\pi$ en un número grande 
 \end{figure}
 
 \subsection{Método de Buffon para la estimación de $\pi$}
+
 \subsubsection{Comprobación del teorema del límite central}
 
 Se consideró el lanzamiento aleatorio de $2 \time 10^8$ agujas con una distribución uniforme para la posición y ángulo, repitiendo el experimento 200 veces para ambos casos; Buffon y la extensión de Laplace.
 
-Mostrando que el histograma de las estimaciones de Pi para ambos métodos presenta un comportamiento Gaussiano, demostrando la validez del teorema del límite central.
+Mostrando que el histograma de la Fig. \ref{buff10} de las estimaciones de Pi para ambos métodos presenta un comportamiento Gaussiano, demostrando la validez del teorema del límite central.
 
 \begin{figure}[h]
  \centering
@@ -364,16 +380,9 @@ Mostrando que el histograma de las estimaciones de Pi para ambos métodos presen
 
 \subsubsection{Comprobación del teorema de los números grandes}
 
-En la siguiente gráfica se resume el error porcentual al estimar el valor de $\pi$ vs. el números de lanzamiento de agujas para ambos métodos. El error converge a cero a partir del lanzamiento de $10^6$ agujas.
+En la Fig. \ref{buff11} se resume el error porcentual al estimar el valor de $\pi$ vs. el números de lanzamiento de agujas para ambos métodos. El error converge a cero a partir del lanzamiento de $10^6$ agujas.
+También queda evidente que con el método corregido de Laplace el valor estimado de $\pi$ converge a su valor esperado con un menor número de lanzamiento de agujas casi en un factor de 10 al compararlo con el método original de Buffon. 
 
-En la anterior gráfica queda evidente que con el método corregido de Laplace el valor estimado de $\pi$ converge a su valor esperado con un menor número de lanzamiento de agujas casi en un factor de 10 al compararlo con el método original de Buffon. 
-
-\begin{figure}[h]
- \centering
-  \includegraphics[width=0.4\textwidth]{figures/err.jpg}
-	\caption{Se comparan los errores de ambos métodos (Buffon y Buffon-Laplace). Se observa que los datos de Buffon-Laplace convergen a 0 con un menor N que los datos de Buffon.}
- \label{buff11}
-\end{figure}
 
 \section{Conclusiones}
 
@@ -382,11 +391,7 @@ Se demostró que los resultados obtenidos mediante una simulación Monte Carlo t
 
 Finalmente, se mostró que se puede lograr simulaciones con un alto costo computacional aplicando un lenguaje de alto nivel como Python y la librería Numpy, lo que permite tener un código simple y legible.
 
-\begin{figure}[tp]
-  \includegraphics[scale=0.5]{figures/errors.png}
-	\caption{Error absoluto del valor de pi a medida que N crece. Se observa que independientemente de la semilla, representada por colores, el valor converge a 0.}
- \label{buff4}
-\end{figure}
+
 
 \begin{thebibliography}
 
