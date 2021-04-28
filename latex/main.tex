@@ -46,7 +46,8 @@ Hoy resulta una alegre ironía que ningún producto que haya aplicado la metodol
 
 El método de Monte Carlo es un método de resolución numérica donde se modelan las relaciones e interacciones de distintos objetos y su entorno, mediante la generación aleatoria de estas interacciones. Mientras mayor sea la repetición de pruebas se obtiene un resultado que va convergiendo a un valor con mayor precisión. Es por el recurso de la aleatoriedad que obtiene el nombre Monte Carlo, pues se inspira en la región del Principado de Mónaco donde se encuentran el casino Monte Carlo.
 
-Un método Monte Carlo se puede definir de la siguiente forma: <<Los métodos Monte Carlo son aquéllos en los que las propiedades de las distribuciones de las variables aleatorias son investigadas mediante la simulación de números aleatorios. Estos métodos, dejando a un lado el origen de los datos, son similares a los métodos estadísticos habituales en los cuales las muestras aleatorias se utilizan para realizar inferencias acerca de las poblaciones origen. Generalmente, en su aplicación estadística se utiliza un modelo para simular un fenómeno que contiene algún componente aleatorio. En los métodos Monte Carlo, por otro lado, el objeto de la investigación es un modelo en sí mismo, y se utilizan sucesos aleatorios o pseudoaleatorios para estudiarlo.\cite{gent}
+Un método Monte Carlo se puede definir de la siguiente forma: \\
+``Los métodos Monte Carlo son aquéllos en los que las propiedades de las distribuciones de las variables aleatorias son investigadas mediante la simulación de números aleatorios. Estos métodos, dejando a un lado el origen de los datos, son similares a los métodos estadísticos habituales en los cuales las muestras aleatorias se utilizan para realizar inferencias acerca de las poblaciones origen. Generalmente, en su aplicación estadística se utiliza un modelo para simular un fenómeno que contiene algún componente aleatorio. En los métodos Monte Carlo, por otro lado, el objeto de la investigación es un modelo en sí mismo, y se utilizan sucesos aleatorios o pseudoaleatorios para estudiarlo".\cite{gent}
 
 El método cobra una especial relevancia las últimas décadas debido a que se produjeron sustanciales y significativos avances respecto a la potencia de los procesadores y las distintas arquitecturas informáticas. Es ampliamente usado en problemas donde obtener un resultado analítico no es posible, o en problemas que contienen demasiada complejidad (como es el caso de la ecuación de transporte de Boltzmann para partículas sin carga).\cite{biela}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,13 +67,13 @@ En 1777, el naturalista francés, el conde de Buffon ($1707-1788$) propuso el pr
 El resultado al que se llegó relaciona la probabilidad de cruzar una de las rayas con la distancia de separación, la longitud de la aguja y el valor de $\pi$. Esta se expresa en la Ec.\ref{ec1}.
 
 \begin{equation}\label{ec1}
-    P=\frac{2*l}{d\pi}
+    P=\frac{2l}{d\pi}
 \end{equation}
 
 Se conoce como la extensión de Laplace al problema de Buffon cuando se considera tanto líneas verticales como horizontales. Se llama Buffon-Laplace aunque Buffon, quien resolvió este problema anteriormente contenía un error que más tarde en 1812 fue corregido por Laplace expresándose en la Ec. \ref{ec2}.
 
 \begin{equation}\label{ec2}
-    P=\frac{2*l*(a+b)}{a*b*\pi}
+    P=\frac{2l(a+b)}{ab\pi}
 \end{equation}
 
 De esta propuesta, se pretende obtener el valor de $\pi$. La probabilidad se obtiene empíricamente al realizar el experimento un número grande de veces y contar cada caso.
@@ -91,10 +92,7 @@ Sea $X_1,..., X_n$ una sucesión de variables aleatorias, diremos que la sucesi�
 
 Siendo conocida esta expresión como criterio de convergencia débil. 
 
-Tomamos la variable aleatoria de interés, el promedio: \\
-
-$\overline{x}=\frac{1}{n}\sum X_i$  
-\\
+Tomamos la variable aleatoria de interés, el promedio: $\overline{x}=\frac{1}{n}\sum X_i$
 
 Aplicando el operador lineal Esperanza:
 
@@ -166,7 +164,7 @@ $E[(\overline{X_n}-\mu)^2]$ es la varianza del promedio, entonces tenemos la rel
 Mostrando que cuando $n$ tiende a un número grande, la probabilidad se anula y por consecuencia el promedio converge en probabilidad a $\mu$.
 
 \subsection{Teorema del Limite Central}
-Sea $X_(1,...,) X_n$ una sucesión de variables aleatorias, independientes e idénticamente distribuidas tales que $\forall_i$  tengan el segundo momento finito  $E(X_i^2)<\infty$ con una media $\infty$ y una varianza $\sigma^2$ distinta de cero. Entonces, si $n$ es suficientemente grande, la variable aleatoria promedio:
+Sea $X_{1,...,} X_n$ una sucesión de variables aleatorias, independientes e idénticamente distribuidas tales que $\forall_i$  tengan el segundo momento finito  $E(X_i^2)<\infty$ con una media $\infty$ y una varianza $\sigma^2$ distinta de cero. Entonces, si $n$ es suficientemente grande, la variable aleatoria promedio:
 
 \begin{equation}
   \displaystyle   \overline{X}=\frac{1}{n}\sum X_i
